@@ -4,449 +4,363 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>أبله موونا | الواجهة المتحركة</title>
+<meta name="description" content="باقات دروس جاهزة لمعلمات الكويت: تحضير، عرض Keynote، مطبوعات، ولعبة تفاعلية.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@400;500;700;800&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;700&display=swap">
 <style>
 :root{
-  --green:#163F2E; --green-2:#235A42; --deep:#0D2A1E; --gold:#C9A15A; --gold-2:#E7CB8F;
-  --cream:#F7EEE3; --paper:#FFFBF5; --pink:#E9A6B0; --rose:#C7646F; --sage:#A8BDA8; --ink:#1E2A24;
-  --head:'Lalezar','Tajawal',system-ui,sans-serif; --body:'Tajawal',system-ui,-apple-system,sans-serif;
+  --ink:#0B231A; --green:#123628; --green-2:#1B4A37; --gold:#C9A562; --gold-soft:#E4CC97;
+  --cream:#F3ECE1; --muted:rgba(243,236,225,.62); --line:rgba(201,165,98,.35); --rose:#E2A3AD;
+  --f:'IBM Plex Sans Arabic',system-ui,-apple-system,sans-serif;
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--deep);color:var(--cream);font-family:var(--body)}
-body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);overflow-x:hidden}
-h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:1.15}
+html,body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--f);-webkit-font-smoothing:antialiased}
+body{overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--gold);color:var(--ink)}
 
 /* top bar */
-.bar{position:fixed;top:env(safe-area-inset-top,0px);inset-inline:0;z-index:50;display:flex;align-items:center;gap:12px;padding:12px max(18px,env(safe-area-inset-right,0px)) 12px max(18px,env(safe-area-inset-left,0px));pointer-events:none}
-.bar img{width:46px;height:46px;pointer-events:auto}
-.bar b{font-family:var(--head);font-weight:400;font-size:22px;color:var(--cream)}
-.bar a.shop{margin-inline-start:auto;pointer-events:auto;text-decoration:none;font-weight:800;font-size:15px;color:var(--green);background:var(--gold);padding:8px 18px;border-radius:99px}
+.bar{position:fixed;z-index:60;top:0;inset-inline:0;display:flex;align-items:center;gap:14px;
+  padding:calc(14px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) 14px max(24px,env(safe-area-inset-left,0px));
+  transition:background .4s,backdrop-filter .4s}
+.bar.solid{background:rgba(11,35,26,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,165,98,.12)}
+.bar img{width:40px;height:40px;border-radius:50%}
+.bar .name{font-weight:500;font-size:17px;letter-spacing:.01em}
+.bar nav{margin-inline-start:auto;display:flex;gap:26px;align-items:center;font-size:14px;color:var(--muted)}
+.bar nav a{text-decoration:none;transition:color .2s}
+.bar nav a:hover{color:var(--cream)}
+.bar nav .cta{color:var(--ink);background:var(--gold);padding:9px 20px;border-radius:99px;font-weight:500}
+.bar nav .cta:hover{color:var(--ink);background:var(--gold-soft)}
 
-/* progress rail */
-.rail{position:fixed;left:max(18px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);z-index:40;display:grid;gap:14px}
-.rail i{display:block;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--gold);transition:background .3s,transform .3s}
-.rail i.on{background:var(--gold);transform:scale(1.35)}
+/* ---------- HERO: the wall of real lessons ---------- */
+.hero{position:relative;height:230vh}
+.hero .pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.wall-wrap{position:absolute;inset:-10%;perspective:1600px}
+.wall{position:absolute;left:50%;top:50%;width:2400px;transform-style:preserve-3d;
+  transform:translate(-50%,-50%) rotateX(28deg) rotateZ(-14deg) scale(1.05)}
+.row{display:flex;gap:22px;margin-bottom:22px;will-change:transform}
+.row img{width:360px;aspect-ratio:16/9;object-fit:cover;border-radius:10px;flex:none;
+  box-shadow:0 30px 60px rgba(0,0,0,.45);filter:saturate(.92)}
+.veil{position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(70% 60% at 50% 50%,rgba(11,35,26,.25) 0%,rgba(11,35,26,.82) 60%,var(--ink) 100%),
+   linear-gradient(180deg,rgba(11,35,26,.55),rgba(11,35,26,.2) 40%,rgba(11,35,26,.9))}
+.hero-copy{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.08em;color:var(--gold-soft);font-weight:400}
+.eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--line)}
+.hero h1{font-weight:200;font-size:clamp(46px,8.4vw,128px);line-height:1.05;margin:22px 0 0;letter-spacing:-.01em}
+.hero h1 b{font-weight:500;color:var(--gold)}
+.hero p{color:var(--muted);font-size:clamp(16px,1.5vw,20px);line-height:1.85;font-weight:300;max-width:34em;margin:22px auto 0}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:99px;padding:14px 28px;font-size:16px;font-weight:500;transition:transform .25s,background .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--gold-soft)}
+.btn.ghost{border:1px solid var(--line);color:var(--cream)}
+.btn.ghost:hover{border-color:var(--gold)}
+.btn svg{width:18px;height:18px}
+.scrollcue{position:absolute;bottom:calc(30px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);
+  font-size:12px;letter-spacing:.14em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scrollcue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 2.2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-/* the long scroll track */
-.track{height:720vh;position:relative}
-.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
-  background:radial-gradient(90% 70% at 50% 45%,#1E4E3A 0%,var(--green) 45%,var(--deep) 100%)}
-.stage::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 50% 50%,transparent 55%,rgba(0,0,0,.45));}
-.grain{position:absolute;inset:0;opacity:.07;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* ---------- SHOWCASE: one package, four parts ---------- */
+.show{position:relative;height:520vh}
+.show .pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
+  background:radial-gradient(60% 70% at 32% 50%,rgba(27,74,55,.75),transparent 70%),var(--ink)}
+.stage{position:absolute;inset:0;display:grid;grid-template-columns:1fr minmax(320px,420px);align-items:center;
+  gap:6vw;padding:90px max(6vw,24px) 60px}
+.device-area{position:relative;height:100%;display:grid;place-items:center;perspective:1800px}
+.device{position:relative;width:min(58vw,820px);aspect-ratio:16/10.4;border-radius:28px;background:#0a0a0a;
+  padding:14px;box-shadow:0 0 0 1px rgba(255,255,255,.06),0 60px 120px rgba(0,0,0,.55),0 0 0 9px rgba(201,165,98,.06);
+  transform-style:preserve-3d;will-change:transform,width}
+.device::after{content:"";position:absolute;top:50%;right:6px;width:4px;height:4px;border-radius:50%;background:#222;transform:translateY(-50%)}
+.screen{position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;background:#111}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.screen img.portrait{object-fit:contain;background:#f6f1ea}
+.glare{position:absolute;inset:0;border-radius:16px;pointer-events:none;
+  background:linear-gradient(115deg,rgba(255,255,255,.10) 0%,transparent 35%)}
+.sheet{position:absolute;left:50%;top:50%;width:min(19vw,280px);aspect-ratio:900/1272;margin:0;transform:translate(-50%,-50%);border-radius:6px;overflow:hidden;
+  background:#f6f1ea;box-shadow:0 2px 0 rgba(255,255,255,.4) inset,0 50px 90px rgba(0,0,0,.55),0 12px 24px rgba(0,0,0,.3);z-index:3;opacity:0}
+.sheet img{width:100%;height:100%;object-fit:cover}
+.sheet.b{z-index:2}
+.halo{position:absolute;width:70%;height:22%;bottom:4%;left:15%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(0,0,0,.6),transparent);filter:blur(10px);z-index:-1}
 
-/* chapter copy */
-.copy{position:absolute;z-index:20;right:max(6vw,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);width:min(34vw,430px)}
-.chap{position:absolute;inset:auto 0 auto 0;top:50%;transform:translateY(-50%);opacity:0}
-.chap .num{font-family:var(--head);font-size:clamp(70px,9vw,130px);line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--gold);display:block}
-.chap .kick{color:var(--gold-2);font-weight:800;font-size:15px;letter-spacing:.02em;margin:8px 0 4px;display:block}
-.chap h2{font-size:clamp(36px,4.6vw,64px);color:var(--cream)}
-.chap h2 em{font-style:normal;color:var(--pink)}
-.chap p{font-size:clamp(16px,1.35vw,19px);line-height:1.8;color:rgba(247,238,227,.82);margin:12px 0 0;max-width:24em}
-.chap .line{display:block;width:70px;height:3px;background:var(--gold);margin:16px 0 0;border-radius:3px}
+.chapters{position:relative;height:340px}
+.ch{position:absolute;inset:0;opacity:0;visibility:hidden}
+.ch .n{font-weight:200;font-size:15px;letter-spacing:.2em;color:var(--gold);display:flex;align-items:center;gap:14px}
+.ch .n::after{content:"";flex:1;height:1px;background:var(--line);max-width:90px}
+.ch h2{font-weight:300;font-size:clamp(34px,3.6vw,54px);line-height:1.15;margin:20px 0 0}
+.ch h2 b{font-weight:500;color:var(--gold-soft)}
+.ch p{color:var(--muted);font-weight:300;font-size:17px;line-height:1.95;margin:18px 0 0}
+.ch ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.ch li{font-size:15px;color:var(--cream);display:flex;gap:12px;align-items:baseline;font-weight:300}
+.ch li::before{content:"";width:6px;height:6px;border-radius:50%;border:1px solid var(--gold);flex:none;transform:translateY(-2px)}
+.progress{position:absolute;bottom:calc(40px + env(safe-area-inset-bottom,0px));right:max(6vw,24px);display:flex;gap:18px;font-size:12px;color:var(--muted);letter-spacing:.06em}
+.progress span{position:relative;padding-top:12px;min-width:70px;transition:color .3s}
+.progress span::before{content:"";position:absolute;top:0;inset-inline:0;height:1px;background:rgba(243,236,225,.18)}
+.progress span i{position:absolute;top:0;right:0;height:1px;width:0;background:var(--gold)}
+.progress span.on{color:var(--cream)}
 
-/* 3D scene */
-.scene{position:absolute;inset:0;perspective:1800px;perspective-origin:50% 40%;z-index:10}
-.anchor{position:absolute;left:27%;top:52%;transform-style:preserve-3d}
-.book{position:absolute;width:300px;height:400px;left:-150px;top:-200px;transform-style:preserve-3d}
-.shadow{position:absolute;width:360px;height:60px;left:-180px;top:200px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent);filter:blur(6px)}
+/* ---------- LIBRARY: covers moving with scroll ---------- */
+.lib{position:relative;padding:150px 0 140px;overflow:hidden;
+  background:linear-gradient(var(--ink),#0E2B20 50%,var(--ink))}
+.lib header{text-align:center;padding:0 24px;margin-bottom:64px}
+.lib h3{font-weight:200;font-size:clamp(34px,5vw,72px);line-height:1.15;margin:18px 0 0}
+.lib h3 b{font-weight:500;color:var(--gold)}
+.lib header p{color:var(--muted);font-weight:300;font-size:17px;margin:16px auto 0;max-width:30em;line-height:1.9}
+.belt{display:flex;gap:20px;width:max-content;will-change:transform;margin-bottom:20px}
+.belt img{width:340px;aspect-ratio:16/9;object-fit:cover;border-radius:12px;flex:none;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);outline:1px solid rgba(255,255,255,.05)}
+.grades{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:56px;padding:0 24px}
+.grades span{border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:14px;color:var(--cream);font-weight:300}
 
-/* pages block (the open book body) */
-.pages{position:absolute;inset:0;border-radius:6px 16px 16px 6px;background:
-  linear-gradient(90deg,#efe3cf 0,#fbf5ea 6%,#fffbf5 50%,#f6ecdc 100%);
-  box-shadow:inset -8px 0 14px rgba(120,90,50,.18),0 30px 60px rgba(0,0,0,.35);transform:translateZ(-6px)}
-.pages::before{content:"";position:absolute;top:4px;bottom:4px;left:-6px;width:8px;border-radius:3px 0 0 3px;
-  background:repeating-linear-gradient(180deg,#eadcc4 0 2px,#fffaf0 2px 4px)}
-.sheet{position:absolute;inset:16px 22px 16px 18px;color:var(--ink);font-family:var(--body);direction:rtl}
-.sheet .t{font-family:var(--head);font-size:30px;color:var(--green);text-align:center}
-.sheet .t small{display:block;font-family:var(--body);font-weight:800;font-size:12px;color:var(--rose);letter-spacing:.04em}
-.sheet .val{position:absolute;left:2px;top:62px;width:62px;height:62px;border-radius:50%;background:var(--pink);display:grid;place-items:center;text-align:center;font-weight:800;font-size:10px;line-height:1.3;color:var(--green);box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--gold)}
-.sheet h4{margin:14px 0 6px;font-family:var(--head);font-weight:400;color:var(--green-2);font-size:17px}
-.ln{height:7px;border-radius:7px;background:#e3d6c2;margin:9px 0;transform-origin:right center}
-.ln.c1{background:linear-gradient(90deg,#e3d6c2,var(--sage))}
-.ln.c2{background:linear-gradient(90deg,#e3d6c2,var(--pink))}
-.tbl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:10px}
-.tbl span{height:22px;border-radius:5px;background:#f1e6d4;border:1px solid #e6d7bf}
-.tbl span:nth-child(-n+3){background:var(--green-2)}
+/* ---------- FINALE ---------- */
+.finale{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;padding:120px 24px calc(80px + env(safe-area-inset-bottom,0px));
+  background:radial-gradient(50% 50% at 50% 45%,rgba(27,74,55,.85),var(--ink) 75%)}
+.finale .seal{width:132px;height:132px;margin:0 auto;border-radius:50%;box-shadow:0 0 0 1px var(--line),0 0 0 12px rgba(201,165,98,.06),0 30px 60px rgba(0,0,0,.5)}
+.finale h4{font-weight:200;font-size:clamp(42px,6.6vw,100px);line-height:1.08;margin:36px 0 0}
+.finale h4 b{font-weight:500;color:var(--gold)}
+.finale p{color:var(--muted);font-weight:300;font-size:18px;margin:18px auto 0;max-width:30em;line-height:1.9}
+.finale .phone{margin-top:18px;font-size:13px;color:var(--muted);letter-spacing:.06em;direction:ltr}
+footer{border-top:1px solid rgba(201,165,98,.12);padding:22px 24px calc(22px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--muted)}
 
-/* cover */
-.cover{position:absolute;inset:0;transform-origin:right center;transform-style:preserve-3d}
-.cover .face,.cover .back{position:absolute;inset:0;border-radius:6px 16px 16px 6px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.cover .face{background:
-  radial-gradient(120% 80% at 30% 20%,rgba(255,255,255,.10),transparent 50%),
-  repeating-radial-gradient(circle at 40% 60%,rgba(0,0,0,.05) 0 1px,transparent 1px 3px),
-  linear-gradient(135deg,#235A42,#163F2E 60%,#0f3123);
-  box-shadow:inset 0 0 0 2px rgba(201,161,90,.55),inset 0 0 0 10px #163F2E,inset 0 0 0 11px rgba(201,161,90,.45),0 30px 60px rgba(0,0,0,.45)}
-.cover .face::before{content:"";position:absolute;right:0;top:0;bottom:0;width:26px;border-radius:0 16px 16px 0;background:linear-gradient(90deg,rgba(0,0,0,.25),rgba(255,255,255,.07) 40%,rgba(0,0,0,.2))}
-.cover .emb{position:absolute;left:50%;top:44%;width:170px;height:170px;transform:translate(-50%,-50%);border-radius:50%;
-  box-shadow:0 0 0 3px rgba(201,161,90,.7),0 0 0 9px rgba(201,161,90,.12),0 10px 30px rgba(0,0,0,.4);overflow:hidden}
-.cover .emb img{width:100%;height:100%;display:block}
-.cover .ttl{position:absolute;bottom:42px;left:0;right:26px;text-align:center;font-family:var(--head);color:var(--gold-2);font-size:24px;letter-spacing:.02em}
-.cover .ttl small{display:block;font-family:var(--body);font-size:12px;font-weight:700;color:rgba(231,203,143,.75)}
-.cover .back{transform:rotateY(180deg);background:linear-gradient(90deg,#f3e8d6,#fffbf5);box-shadow:inset 0 0 0 10px #163F2E,inset 0 0 0 11px rgba(201,161,90,.45)}
-.cover .back::after{content:"";position:absolute;inset:26px;border-radius:8px;background:
-  repeating-linear-gradient(45deg,rgba(22,63,46,.06) 0 8px,transparent 8px 16px)}
-.ribbon{position:absolute;right:-4px;top:-4px;width:14px;height:450px;transform:translateZ(2px);
-  background:linear-gradient(90deg,#a54a55,var(--rose) 50%,#a54a55);clip-path:polygon(0 0,100% 0,100% 100%,50% 94%,0 100%)}
+/* reveal helper */
+.rv{opacity:0;transform:translateY(28px)}
 
-/* tulip */
-.tulip{position:absolute;width:150px;height:240px;left:75px;top:-330px;transform-origin:50% 100%;pointer-events:none}
-.tulip svg{width:100%;height:100%;overflow:visible}
-
-/* slide (deck) */
-.slide{position:absolute;width:480px;height:270px;left:-240px;top:-135px;border-radius:18px;overflow:hidden;transform-style:preserve-3d;
-  background:linear-gradient(160deg,#FFF7EC,#F8E1E4);box-shadow:0 0 0 8px #10261c,0 0 0 9px rgba(201,161,90,.6),0 40px 80px rgba(0,0,0,.5);opacity:0}
-.slide .sky{position:absolute;inset:0;background:radial-gradient(60% 80% at 80% 20%,rgba(233,166,176,.55),transparent 60%),radial-gradient(70% 70% at 10% 90%,rgba(168,189,168,.6),transparent 60%)}
-.slide .st{position:absolute;right:28px;top:30px;font-family:var(--head);font-size:40px;color:var(--green);line-height:1.1}
-.slide .st small{display:block;font-family:var(--body);font-size:14px;font-weight:800;color:var(--rose)}
-.slide .pill{position:absolute;right:28px;height:38px;border-radius:12px;background:var(--paper);box-shadow:0 6px 14px rgba(22,63,46,.12);display:flex;align-items:center;padding:0 14px;gap:8px;font-weight:800;font-size:14px;color:var(--green)}
-.slide .pill b{width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--green);display:grid;place-items:center;font-size:12px}
-.slide .p1{top:128px}.slide .p2{top:174px}.slide .p3{top:220px}
-.slide .art{position:absolute;left:26px;bottom:20px;width:190px;height:190px}
-.slide .chip{position:absolute;left:14px;top:14px;background:var(--green);color:var(--gold-2);font-size:11px;font-weight:800;border-radius:99px;padding:4px 10px}
-
-/* printable cards */
-.cards{position:absolute;left:0;top:0;transform-style:preserve-3d}
-.card{position:absolute;width:150px;height:212px;left:-75px;top:-106px;border-radius:12px;background:var(--paper);
-  box-shadow:0 20px 40px rgba(0,0,0,.35),inset 0 0 0 1px #eadcc4;opacity:0;padding:12px;color:var(--ink);overflow:hidden}
-.card .w{font-family:var(--head);font-size:30px;white-space:nowrap;text-align:center;color:var(--green);margin-top:56px;line-height:1.1}
-.card .d{position:absolute;left:50%;top:22px;width:60px;height:60px;transform:translateX(-50%);border-radius:50%}
-.card .s{position:absolute;bottom:12px;left:12px;right:12px;height:8px;border-radius:8px;background:#efe3cf}
-.card.k1 .d{background:var(--pink)} .card.k2 .d{background:var(--sage)} .card.k3 .d{background:var(--gold-2)} .card.k4 .d{background:#cfe0ea} .card.k5 .d{background:#f3c9a3}
-.card.ws{padding:14px}
-.card.ws .wt{font-family:var(--head);font-size:18px;color:var(--rose);text-align:center}
-.card.ws .ln{height:6px;margin:10px 0}
-
-/* tablet with the game */
-.tablet{position:absolute;width:520px;height:340px;left:-260px;top:-170px;border-radius:30px;background:#111;padding:16px;
-  box-shadow:0 0 0 2px #2a2a2a,0 50px 90px rgba(0,0,0,.55);opacity:0}
-.tablet img{width:100%;height:100%;object-fit:cover;border-radius:16px;display:block}
-.tablet .tap{position:absolute;width:56px;height:56px;border-radius:50%;left:46%;top:58%;border:3px solid #fff;opacity:0;box-shadow:0 0 0 0 rgba(255,255,255,.6)}
-
-/* finale */
-.finale{position:absolute;inset:0;z-index:30;display:grid;place-items:center;text-align:center;pointer-events:none;opacity:0}
-.finale .in{transform:translateY(20px)}
-.finale img{width:min(200px,42vw);filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
-.finale h1{font-size:clamp(44px,7vw,92px);color:var(--cream);margin-top:10px}
-.finale h1 em{font-style:normal;color:var(--gold-2)}
-.finale p{color:rgba(247,238,227,.85);font-size:clamp(16px,1.6vw,20px);margin:8px auto 0;max-width:30em}
-.finale .ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;pointer-events:auto}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:99px;padding:13px 26px;font-weight:800;font-size:17px}
-.btn.gold{background:var(--gold);color:var(--green)}
-.btn.line{border:2px solid var(--gold);color:var(--cream)}
-.btn small{font-weight:500;opacity:.8}
-
-/* scroll hint */
-.hint{position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;text-align:center;color:var(--gold-2);font-weight:700;font-size:14px}
-.hint .mouse{width:26px;height:40px;border:2px solid var(--gold);border-radius:14px;margin:0 auto 8px;position:relative}
-.hint .mouse::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;border-radius:4px;background:var(--gold);transform:translateX(-50%);animation:wheel 1.6s infinite}
-@keyframes wheel{0%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,12px)}}
-
-/* sparkles */
-.dust{position:absolute;inset:0;pointer-events:none;z-index:5}
-.dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 8px var(--gold);opacity:.5;animation:float linear infinite}
-@keyframes float{from{transform:translateY(0)}to{transform:translateY(-110vh)}}
-
-/* after the journey: a calm footer strip */
-.after{background:var(--cream);color:var(--green);padding:56px 20px calc(56px + env(safe-area-inset-bottom,0px));text-align:center}
-.after h3{font-size:clamp(28px,4vw,40px)}
-.after .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-.after .pill{background:var(--paper);border:1.5px solid #EADBC8;border-radius:18px;padding:14px 20px;min-width:150px}
-.after .pill b{display:block;font-family:var(--head);font-weight:400;font-size:22px}
-.after .pill span{font-size:14px;color:#6A6259}
-.after .btn.gold{margin-top:22px}
-
-/* mobile: book centered on top, copy in the lower part */
-@media (max-width:820px){
-  .anchor{left:50%;top:40%}
-  
-  .copy{right:0;left:0;width:auto;top:auto;bottom:calc(70px + env(safe-area-inset-bottom,0px));transform:none;padding:0 24px;height:210px}
-  .chap{top:auto;bottom:0;transform:none;text-align:center}
-  .chap .num{font-size:64px;display:inline-block}
-  .chap .kick{display:inline-block;margin-inline-start:10px}
-  .chap h2{font-size:34px}
-  .chap p{font-size:15px;margin-inline:auto}
-  .chap .line{margin-inline:auto}
-  .rail{left:10px;top:22%;transform:none}
-  .hint{display:none}
+/* ---------- mobile ---------- */
+@media (max-width:860px){
+  .bar nav a:not(.cta){display:none}
+  .row img{width:240px}
+  .wall{width:1500px}
+  .stage{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:28px;padding:84px 22px 90px}
+  .device-area{height:auto}
+  .device{width:min(92vw,560px);border-radius:20px;padding:9px}
+  .screen{border-radius:12px}
+  .chapters{height:250px}
+  .sheet{width:min(38vw,200px)}
+  .ch h2{font-size:30px}
+  .ch p{font-size:15px;margin-top:10px}
+  .ch ul{display:none}
+  .progress{right:22px;left:22px;justify-content:space-between;gap:8px}
+  .progress span{min-width:0;flex:1}
+  .belt img{width:230px}
 }
-@media (prefers-reduced-motion:reduce){.dust i,.hint .mouse::after{animation:none}}
+@media (prefers-reduced-motion:reduce){.scrollcue i{animation:none}}
 </style>
 </head>
 <body>
 
-<div class="bar">
-  <img src="img/logo.png" alt="شعار أبله موونا">
-  <b>أبله موونا</b>
-  <a class="shop" href="../">المتجر</a>
-</div>
+<header class="bar" id="bar">
+  <img src="../img/logo.png" alt="شعار أبله موونا">
+  <span class="name">أبله موونا</span>
+  <nav>
+    <a href="#package">الباقة</a>
+    <a href="#library">المكتبة</a>
+    <a class="cta" href="../">ادخلي المتجر</a>
+  </nav>
+</header>
 
-<div class="rail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-
-<div class="track" id="track">
-  <section class="stage" aria-label="رحلة أبله موونا">
-    <div class="grain"></div>
-    <div class="dust" id="dust"></div>
-
-    <div class="scene">
-      <div class="anchor" id="anchor">
-        <div class="shadow" id="shadow"></div>
-
-        <!-- tulip growing from the spine -->
-        <div class="tulip" id="tulip">
-          <svg viewBox="0 0 150 240" aria-hidden="true">
-            <defs>
-              <linearGradient id="pet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6C3CB"/><stop offset="1" stop-color="#C7646F"/></linearGradient>
-              <linearGradient id="pet2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9D6DB"/><stop offset="1" stop-color="#E08995"/></linearGradient>
-              <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5E8F6E"/><stop offset="1" stop-color="#235A42"/></linearGradient>
-            </defs>
-            <path id="stem" d="M75 240 C75 200 72 160 75 108" stroke="#2F6B4C" stroke-width="6" fill="none" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
-            <g id="leaves" style="transform-origin:75px 200px">
-              <path d="M74 214 C40 196 28 160 34 128 C54 150 70 178 74 214Z" fill="url(#leaf)"/>
-              <path d="M76 196 C108 182 122 150 118 120 C98 140 82 166 76 196Z" fill="url(#leaf)" opacity=".92"/>
-            </g>
-            <g id="bloom" style="transform-origin:75px 110px">
-              <path id="pl" d="M75 110 C50 104 40 76 48 46 C58 62 70 72 75 110Z" fill="url(#pet2)" style="transform-origin:75px 110px"/>
-              <path id="pr" d="M75 110 C100 104 110 76 102 46 C92 62 80 72 75 110Z" fill="url(#pet2)" style="transform-origin:75px 110px"/>
-              <path d="M75 112 C58 104 54 66 75 30 C96 66 92 104 75 112Z" fill="url(#pet)"/>
-            </g>
-          </svg>
-        </div>
-
-        <!-- 1: the notebook -->
-        <div class="book" id="book">
-          <div class="pages">
-            <div class="sheet" id="sheet">
-              <div class="t"><small>تحضير الدرس</small>عالمٌ في ورقة</div>
-              <div class="val">قيمة<br>الشهر</div>
-              <h4>المجال المعرفي</h4>
-              <div class="ln c1" style="width:62%"></div>
-              <div class="ln" style="width:66%"></div>
-              <div class="ln c2" style="width:54%"></div>
-              <h4>الأنشطة</h4>
-              <div class="ln" style="width:88%"></div>
-              <div class="ln c1" style="width:70%"></div>
-              <div class="ln" style="width:82%"></div>
-              <div class="tbl"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-            </div>
-          </div>
-          <div class="cover" id="cover">
-            <div class="face">
-              <div class="emb"><img src="img/logo.png" alt=""></div>
-              <div class="ttl">دفتر أبله موونا<small>كل درس عالم</small></div>
-            </div>
-            <div class="back"></div>
-          </div>
-          <div class="ribbon" id="ribbon"></div>
-        </div>
-
-        <!-- 2: the slide -->
-        <div class="slide" id="slide">
-          <div class="sky"></div>
-          <span class="chip">عرض Keynote</span>
-          <div class="st"><small>الوحدة الأولى</small>رحلةُ الدرس</div>
-          <div class="pill p1" id="sp1"><b>١</b>تمهيدٌ يدهش الطالبات</div>
-          <div class="pill p2" id="sp2"><b>٢</b>نشاطٌ حركيٌّ مبتكر</div>
-          <div class="pill p3" id="sp3"><b>٣</b>تقويمٌ بلمسة</div>
-          <svg class="art" viewBox="0 0 190 190" aria-hidden="true">
-            <circle cx="95" cy="95" r="86" fill="#163F2E"/>
-            <circle cx="95" cy="95" r="86" fill="none" stroke="#C9A15A" stroke-width="3" stroke-dasharray="6 7"/>
-            <rect x="48" y="58" width="94" height="66" rx="10" fill="#FFFBF5"/>
-            <rect x="58" y="70" width="44" height="8" rx="4" fill="#E9A6B0"/>
-            <rect x="58" y="86" width="70" height="6" rx="3" fill="#e3d6c2"/>
-            <rect x="58" y="98" width="56" height="6" rx="3" fill="#e3d6c2"/>
-            <path d="M95 124 L95 146 M75 146 L115 146" stroke="#C9A15A" stroke-width="5" stroke-linecap="round"/>
-            <circle id="spark" cx="138" cy="58" r="10" fill="#E7CB8F"/>
-          </svg>
-        </div>
-
-        <!-- 3: printables -->
-        <div class="cards" id="cards">
-          <div class="card ws" id="c0"><div class="wt">ورقة عمل</div><div class="ln" style="width:90%"></div><div class="ln c2" style="width:70%"></div><div class="ln" style="width:84%"></div><div class="ln c1" style="width:60%"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:52%"></div></div>
-          <div class="card k1" id="c1"><div class="d"></div><div class="w">خـطّـطـي</div><div class="s"></div></div>
-          <div class="card k2" id="c2"><div class="d"></div><div class="w">نـفّـذي</div><div class="s"></div></div>
-          <div class="card k3" id="c3"><div class="d"></div><div class="w">قـيّـمـي</div><div class="s"></div></div>
-          <div class="card k4" id="c4"><div class="d"></div><div class="w">الـهـدف</div><div class="s"></div></div>
-        </div>
-
-        <!-- 4: game on a tablet -->
-        <div class="tablet" id="tablet">
-          <img src="img/jar.jpg" alt="لعبة افتحي البرطمان من أبله موونا">
-          <span class="tap" id="tap"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- chapter copy -->
-    <div class="copy" id="copy">
-      <div class="chap" data-c="0">
-        <span class="num">٠١</span><span class="kick">من أبله موونا</span>
-        <h2>كل درس <em>عالمٌ</em> خاص</h2>
-        <p>دفتر واحد، وفيه رحلة كاملة للحصة. انزلي وشوفي كيف ينفتح.</p><span class="line"></span>
-      </div>
-      <div class="chap" data-c="1">
-        <span class="num">٠٢</span><span class="kick">التحضير</span>
-        <h2>تحضيرٌ <em>يُرضي</em> الموجّهة</h2>
-        <p>أهداف مرتبة على جدول الأفعال، ومؤشرات القرن الحادي والعشرين، وقيمة الشهر، بثلاث صفحات أنيقة.</p><span class="line"></span>
-      </div>
-      <div class="chap" data-c="2">
-        <span class="num">٠٣</span><span class="kick">عرض Keynote</span>
-        <h2>عرضٌ <em>يحكي</em> الدرس</h2>
-        <p>كل شريحة تكمل اللي قبلها، بحركات ماجك موف وأصوات من عالم الدرس.</p><span class="line"></span>
-      </div>
-      <div class="chap" data-c="3">
-        <span class="num">٠٤</span><span class="kick">المطبوعات</span>
-        <h2>اطبعي <em>ووزّعي</em> فورًا</h2>
-        <p>ورقة عمل ونموذج إجابة وبطاقات سبورة بكلمات كبيرة واضحة، بلا قص ولا لصق.</p><span class="line"></span>
-      </div>
-      <div class="chap" data-c="4">
-        <span class="num">٠٥</span><span class="kick">اللعبة التفاعلية</span>
-        <h2>لعبةٌ <em>تُشعل</em> الحصة</h2>
-        <p>رابط لعبة يفتح على السبورة الذكية، بفكرة جديدة لكل درس.</p><span class="line"></span>
-      </div>
-    </div>
-
-    <!-- finale -->
-    <div class="finale" id="finale">
-      <div class="in">
-        <img src="img/logo.png" alt="أبله موونا">
-        <h1>درسكِ القادم <em>جاهز</em></h1>
-        <p>تحضير، وعرض، ومطبوعات، ولعبة تفاعلية. باقة واحدة متناسقة لكل درس.</p>
-        <div class="ctas">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="pin">
+    <div class="wall-wrap"><div class="wall" id="wall"></div></div>
+    <div class="veil" id="veil"></div>
+    <div class="hero-copy" id="heroCopy">
+      <div>
+        <span class="eyebrow">باقات دروس جاهزة لمعلمات الكويت</span>
+        <h1>كل حصة<br><b>عالمٌ يُروى</b></h1>
+        <p>تحضير، وعرض Keynote متحرك، ومطبوعات، ولعبة تفاعلية. باقة واحدة متناسقة، مصمّمة لكل درس من جديد.</p>
+        <div class="btns">
           <a class="btn gold" href="../">ادخلي المتجر</a>
-          <a class="btn line" href="https://wa.me/96555438624">اطلبي عبر واتساب <small>‎+965 5543 8624</small></a>
+          <a class="btn ghost" href="#package">شوفي الباقة</a>
         </div>
       </div>
     </div>
-
-    <div class="hint" id="hint"><div class="mouse"></div>انزلي لتبدأ الرحلة</div>
-  </section>
-</div>
-
-<section class="after">
-  <h3>كل باقة من أبله موونا فيها</h3>
-  <div class="row">
-    <div class="pill"><b>تحضير</b><span>ثلاث صفحات</span></div>
-    <div class="pill"><b>عرض Keynote</b><span>متحرك وبأصوات</span></div>
-    <div class="pill"><b>مطبوعات</b><span>جاهزة للطباعة</span></div>
-    <div class="pill"><b>لعبة</b><span>رابط تفاعلي</span></div>
+    <div class="scrollcue" id="cue"><i></i>انزلي</div>
   </div>
-  <a class="btn gold" href="../">ادخلي المتجر</a>
 </section>
+
+<!-- SHOWCASE -->
+<section class="show" id="package">
+  <div class="pin">
+    <div class="stage">
+      <div class="device-area">
+        <div class="device" id="device">
+          <div class="screen" id="screen">
+            <img src="../img/pv/shakhsiya-1-1.jpg" alt="غلاف عرض درس الشخصية">
+            <img src="../img/pv/battaniya-1-2.jpg" alt="نشاط من عرض غرزة البطانية">
+            <img src="../img/pv/certs-2.jpg" alt="شهادة تميز من المطبوعات">
+            <img src="../img/pv/gen-2.jpg" alt="لعبة تفاعلية على السبورة الذكية">
+            <div class="glare"></div>
+          </div>
+          <div class="halo"></div>
+        </div>
+        <figure class="sheet b" id="sheetB"><img src="../img/pv/alyaf-1-3.jpg" alt="صفحة من تحضير درس ألياف النسيج"></figure>
+        <figure class="sheet" id="sheetA"><img src="../img/pv/maskan-1-3.jpg" alt="صفحة من تحضير درس المسكن"></figure>
+      </div>
+      <div class="chapters" id="chapters">
+        <article class="ch">
+          <span class="n">٠١ — العرض</span>
+          <h2>عرضٌ <b>يحكي</b> الدرس</h2>
+          <p>كل درس عالم له قصته وألوانه، والشرائح تكمل بعضها بحركات ماجك موف وأصوات من عالم الدرس.</p>
+          <ul><li>يفتح في Keynote وPowerPoint</li><li>نشاط حركي في كل درس</li></ul>
+        </article>
+        <article class="ch">
+          <span class="n">٠٢ — التحضير</span>
+          <h2>تحضيرٌ <b>مرتّب</b> ودقيق</h2>
+          <p>أهداف على جدول الأفعال السلوكية، ومؤشرات القرن الحادي والعشرين بأكوادها، وقيمة الشهر، وفق دليل المعلم المعتمد.</p>
+          <ul><li>ثلاث صفحات أنيقة</li><li>بنفس ألوان العرض والمطبوعات</li></ul>
+        </article>
+        <article class="ch">
+          <span class="n">٠٣ — المطبوعات</span>
+          <h2>اطبعي <b>ووزّعي</b> فورًا</h2>
+          <p>ورقة عمل ونموذج إجابة وبطاقات سبورة بكلمات كبيرة وواضحة، بلا قص ولا لصق.</p>
+          <ul><li>مقاس A4 جاهز للطباعة</li><li>تصميم يطابق عالم الدرس</li></ul>
+        </article>
+        <article class="ch">
+          <span class="n">٠٤ — اللعبة</span>
+          <h2>لعبةٌ <b>تُشعل</b> الحصة</h2>
+          <p>رابط لعبة تفاعلية يفتح على السبورة الذكية، بفكرة جديدة لكل درس، وفرق تتنافس على النقاط.</p>
+          <ul><li>تشتغل من المتصفح مباشرة</li><li>شريحة مستقلة داخل العرض</li></ul>
+        </article>
+      </div>
+    </div>
+    <div class="progress" id="progress">
+      <span>العرض<i></i></span><span>التحضير<i></i></span><span>المطبوعات<i></i></span><span>اللعبة<i></i></span>
+    </div>
+  </div>
+</section>
+
+<!-- LIBRARY -->
+<section class="lib" id="library">
+  <header>
+    <span class="eyebrow rv">المكتبة</span>
+    <h3 class="rv">دروسٌ <b>جاهزة</b><br>بانتظار حصتكِ</h3>
+    <p class="rv">الاقتصاد المنزلي للمتوسط والثانوي، وكل درس بأكثر من نسخة بتصميم وأنشطة مختلفة.</p>
+  </header>
+  <div class="belt" id="belt1"></div>
+  <div class="belt" id="belt2"></div>
+  <div class="grades">
+    <span class="rv">السادس</span><span class="rv">السابع</span><span class="rv">الثامن</span><span class="rv">التاسع</span><span class="rv">الثانوي</span>
+  </div>
+</section>
+
+<!-- FINALE -->
+<section class="finale">
+  <div>
+    <img class="seal rv" src="../img/logo.png" alt="أبله موونا">
+    <h4 class="rv">درسكِ القادم<br><b>جاهز</b></h4>
+    <p class="rv">اختاري الدرس، ونرسل لكِ الباقة كاملة: تحضير، وعرض، ومطبوعات، ولعبة.</p>
+    <div class="btns rv">
+      <a class="btn gold" href="../">ادخلي المتجر</a>
+      <a class="btn ghost" href="https://wa.me/96555438624">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+        اطلبي عبر واتساب
+      </a>
+    </div>
+    <div class="phone rv">+965 5543 8624</div>
+  </div>
+</section>
+<footer>
+  <span>أبله موونا · abla.moona</span>
+  <span>منتجات تعليمية رقمية لمعلمات الكويت</span>
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
-  // floating gold dust
-  var dust=document.getElementById('dust');
-  for(var i=0;i<26;i++){var s=document.createElement('i');s.style.left=(Math.random()*100)+'%';s.style.top=(100+Math.random()*40)+'%';
-    s.style.animationDuration=(14+Math.random()*18)+'s';s.style.animationDelay=(-Math.random()*30)+'s';s.style.transform='scale('+(.5+Math.random())+')';dust.appendChild(s);}
+  var P='../img/pv/';
+  var covers=['abli-1-1','ajyal-1-1','alyaf-1-1','aqd-1-1','asnan-1-1','azrar-1-1','battaniya-1-1','bothur-1-1','dawra-1-1','dohn-1-1','faqr-1-1','hifz-1-1','maskan-1-1','shakhsiya-1-1','sarraja-1-1','tadweer-1-1','taqa-1-1','idara-1-1','qiyam-1-1','ankabout-1-1','waqt-1-2','mizania-1-2','alyaf-2-1','sarraja-2-1','tadweer-2-1','taqa-2-1','qiyam-2-1','madkhal-2-1'];
+  function img(n){var i=new Image();i.src=P+n+'.jpg';i.alt='';i.loading='lazy';i.decoding='async';return i;}
+  function shuffle(a,s){a=a.slice();for(var i=a.length-1;i>0;i--){s=(s*9301+49297)%233280;var j=Math.floor(s/233280*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
 
-  if(!window.gsap||!window.ScrollTrigger){document.querySelector('.chap').style.opacity=1;return;}
+  // build wall: 5 rows x 7
+  var wall=document.getElementById('wall'),rows=[];
+  for(var r=0;r<5;r++){var row=document.createElement('div');row.className='row';
+    shuffle(covers,r*17+3).slice(0,8).forEach(function(n){row.appendChild(img(n))});wall.appendChild(row);rows.push(row);}
+  // belts
+  [['belt1',11],['belt2',29]].forEach(function(b){var el=document.getElementById(b[0]);
+    var list=shuffle(covers,b[1]);list.concat(list.slice(0,6)).forEach(function(n){el.appendChild(img(n))});});
+
+  if(!window.gsap||!window.ScrollTrigger){
+    document.querySelectorAll('.rv').forEach(function(e){e.style.opacity=1;e.style.transform='none'});
+    var c=document.querySelector('.ch');c.style.opacity=1;c.style.visibility='visible';
+    document.querySelector('.screen img').style.opacity=1;return;
+  }
   gsap.registerPlugin(ScrollTrigger);
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mobile=matchMedia('(max-width:860px)').matches;
 
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(window.Lenis&&!reduce){
-    try{var lenis=new Lenis({lerp:.085,smoothWheel:true});
-      lenis.on('scroll',ScrollTrigger.update);
-      gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);}catch(e){}
+  if(window.Lenis&&!reduce){try{var lenis=new Lenis({lerp:.09});lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();lenis.scrollTo(a.getAttribute('href'),{duration:1.6})})});
+  }catch(e){}}
+
+  // bar becomes solid after hero starts
+  ScrollTrigger.create({start:80,onUpdate:function(s){document.getElementById('bar').classList.toggle('solid',s.scroll()>80)}});
+
+  // idle drift of wall rows
+  rows.forEach(function(row,i){gsap.fromTo(row,{x:i%2?-140:0},{x:i%2?0:-140,duration:26+i*3,ease:'none',repeat:-1,yoyo:true})});
+
+  // HERO scroll: copy lifts away, wall flattens and the camera pushes in
+  var h=gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom bottom',scrub:1}});
+  h.to('#cue',{opacity:0,duration:.1},0)
+   .to('#heroCopy',{opacity:0,y:-80,scale:.96,duration:.35,ease:'power2.in'},0)
+   .to('#wall',{rotateX:0,rotateZ:0,scale:mobile?1.9:1.55,duration:1,ease:'power2.inOut'},.05)
+   .to('#veil',{opacity:.35,duration:.6},.1)
+   .to('#wall',{opacity:0,duration:.25,ease:'power1.in'},.9);
+
+  // SHOWCASE
+  var shots=gsap.utils.toArray('#screen img'), chs=gsap.utils.toArray('.ch'), bars=gsap.utils.toArray('#progress span');
+  gsap.set(shots[0],{opacity:1});gsap.set(chs[0],{autoAlpha:1});bars[0].classList.add('on');
+  gsap.set('#device',{rotateY:mobile?0:-16,rotateX:6,y:60,scale:.92});
+
+  var s=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{trigger:'#package',start:'top top',end:'bottom bottom',scrub:1,
+    onUpdate:function(st){var p=st.progress,idx=Math.min(3,Math.floor(p*4.0001));
+      bars.forEach(function(b,i){b.classList.toggle('on',i===idx);var f=Math.max(0,Math.min(1,p*4-i));b.querySelector('i').style.width=(f*100)+'%'});}}});
+
+  // entrance: device settles
+  s.to('#device',{rotateY:0,rotateX:0,y:0,scale:1,duration:1},0);
+  // inside chapter 1: cover -> activity slide
+  s.to(shots[1],{opacity:1,duration:.5},1.1).to(shots[1],{scale:1.04,duration:1,ease:'none'},1.1);
+
+  function chapter(i,at,deviceTo){
+    s.to(chs[i-1],{autoAlpha:0,y:-30,duration:.4},at)
+     .fromTo(chs[i],{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.5},at+.35);
+    if(deviceTo) s.to('#device',deviceTo,at);
   }
+  // ch2: the prep pages slide out of the tablet like real paper
+  chapter(1,2.2,{scale:.82,opacity:.35,rotateY:mobile?0:10,duration:.9});
+  s.fromTo('#sheetB',{opacity:0,y:'60%',x:mobile?'-30%':'-62%',rotate:10},{opacity:1,y:'-42%',x:mobile?'-62%':'-82%',rotate:-9,duration:1,ease:'power3.out'},2.5)
+   .fromTo('#sheetA',{opacity:0,y:'70%',x:'-50%',rotate:-6},{opacity:1,y:'-42%',x:mobile?'-40%':'-30%',rotate:4,duration:1,ease:'power3.out'},2.7)
+   .to('#sheetA',{rotate:2,y:'-44%',duration:1,ease:'sine.inOut'},3.6);
+  // ch3: papers leave, tablet returns with the printables
+  chapter(2,4.2,{scale:1,opacity:1,rotateY:0,duration:.9});
+  s.to('#sheetA',{opacity:0,y:'-140%',rotate:14,duration:.8,ease:'power2.in'},4.2)
+   .to('#sheetB',{opacity:0,y:'-150%',rotate:-16,duration:.8,ease:'power2.in'},4.25)
+   .to(shots[2],{opacity:1,duration:.4},4.6).fromTo(shots[2],{scale:1.06},{scale:1,duration:1.2,ease:'power1.out'},4.6);
+  // ch4: game
+  chapter(3,6.2,{rotateY:mobile?0:8,duration:.9});
+  s.to(shots[3],{opacity:1,duration:.4},6.6).to('#device',{rotateY:0,duration:1},7.2).to({},{duration:.6});
 
-  var chaps=gsap.utils.toArray('.chap'), dots=gsap.utils.toArray('.rail i');
-  var mobile=window.matchMedia('(max-width:820px)').matches;
-  var S=mobile?.6:1;
+  // LIBRARY belts move with scroll (opposite directions)
+  gsap.fromTo('#belt1',{x:0},{x:()=>-(document.getElementById('belt1').scrollWidth-innerWidth)*.55,ease:'none',
+    scrollTrigger:{trigger:'#library',start:'top bottom',end:'bottom top',scrub:1}});
+  gsap.fromTo('#belt2',{x:()=>-(document.getElementById('belt2').scrollWidth-innerWidth)*.55},{x:0,ease:'none',
+    scrollTrigger:{trigger:'#library',start:'top bottom',end:'bottom top',scrub:1}});
 
-  gsap.set('#book',{rotateX:18,rotateY:-24,rotateZ:-4,scale:S});
-  gsap.set('#tulip',{scale:0,opacity:0});
-  gsap.set('#leaves',{scale:0});
-  gsap.set('#bloom',{scale:0});
-  gsap.set('.sheet .ln',{scaleX:0});
-  gsap.set('.sheet .tbl span',{scale:0});
-  gsap.set(chaps[0],{opacity:1});
-  gsap.set('#slide',{scale:.3*S,rotateY:-40,y:40});
-  gsap.set('#tablet',{scale:.4*S,rotateX:30,y:60});
-  gsap.set('.card',{scale:.4*S});
-
-  // gentle idle float of the closed book
-  var idle=gsap.to('#anchor',{y:-12,duration:2.6,ease:'sine.inOut',yoyo:true,repeat:-1});
-
-  var tl=gsap.timeline({defaults:{ease:'power2.inOut'},
-    scrollTrigger:{trigger:'#track',start:'top top',end:'bottom bottom',scrub:1.1,
-      onUpdate:function(st){
-        var p=st.progress, idx=p<.13?0:p<.33?1:p<.52?2:p<.7?3:p<.86?4:5;
-        dots.forEach(function(d,i){d.classList.toggle('on',i===idx)});
-        gsap.to('#hint',{opacity:p>.02?0:1,duration:.3,overwrite:true});
-      }}});
-
-  function chap(from,to,at){ // crossfade copy
-    tl.to(chaps[from],{opacity:0,y:-30,duration:.6},at)
-      .fromTo(chaps[to],{opacity:0,y:40},{opacity:1,y:0,duration:.7},at+.3);
-  }
-
-  // ACT 1: book straightens and the cover swings open
-  tl.to('#book',{rotateX:8,rotateY:-6,rotateZ:0,duration:1.4},0)
-    .to('#anchor',{x:mobile?-88:0,duration:2},.6)
-    .to('#cover',{rotateY:-172,duration:2.2,ease:'power3.inOut'},.6)
-    .to('#ribbon',{rotateZ:-6,x:-6,duration:2},.6)
-    .to('#tulip',{opacity:1,scale:1,duration:.4},1.6)
-    .to('#stem',{attr:{'stroke-dashoffset':0},duration:1.2},1.6)
-    .to('#leaves',{scale:1,duration:1,ease:'back.out(1.6)'},2.2)
-    .to('#bloom',{scale:.55,duration:.9,ease:'back.out(2)'},2.7)
-    .to('.sheet .ln',{scaleX:1,stagger:.12,duration:.5,ease:'power1.out'},2.1)
-    .to('.sheet .tbl span',{scale:1,stagger:.05,duration:.3,ease:'back.out(2)'},3);
-  chap(0,1,1.0);
-
-  // ACT 2: the page lifts off and grows into a Keynote slide
-  tl.to('#book',{x:-120,rotateY:24,scale:.62*S,opacity:.35,duration:1.4},4)
-    .to('#anchor',{x:0,duration:1.2},4)
-    .to('#tulip',{x:-120,scale:.6,opacity:.4,duration:1.4},4)
-    .to('#slide',{opacity:1,scale:1*S,rotateY:0,y:0,duration:1.5,ease:'power3.out'},4.3)
-    .from(['#sp1','#sp2','#sp3'],{x:60,opacity:0,stagger:.25,duration:.6},5.1)
-    .to('#spark',{attr:{r:16},duration:.4,yoyo:true,repeat:3},5.4);
-  chap(1,2,4.1);
-
-  // ACT 3: slide flies back, printable cards fan out like a hand of cards
-  tl.to('#slide',{scale:.25*S,rotateY:50,x:180,y:-80,opacity:0,duration:1.2,ease:'power3.in'},7)
-    .to('#book',{x:0,rotateY:-4,rotateX:60,y:110,scale:.7*S,opacity:.9,duration:1.3},7.2)
-    .to('#tulip',{x:0,opacity:0,duration:.8},7.2);
-  var fan=[{r:-30,x:-230,y:20},{r:-15,x:-115,y:-25},{r:0,x:0,y:-40},{r:15,x:115,y:-25},{r:30,x:230,y:20}];
-  ['#c1','#c2','#c0','#c3','#c4'].forEach(function(id,i){
-    var f=fan[i]; if(mobile){f={r:f.r,x:f.x*.55,y:f.y}}
-    tl.fromTo(id,{opacity:0,scale:.3*S,x:0,y:120,rotateZ:0},
-      {opacity:1,scale:(i===2?1.08:1)*S,x:f.x,y:f.y-30,rotateZ:f.r,duration:1.1,ease:'back.out(1.4)'},7.9+i*.14);
+  // gentle reveals
+  gsap.utils.toArray('.rv').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
   });
-  chap(2,3,7.3);
 
-  // ACT 4: cards gather into a stack, the tablet rises with the game
-  tl.to('.card',{x:0,y:-10,rotateZ:function(i){return (i-2)*3},scale:.6*S,duration:1,ease:'power3.inOut'},10.4)
-    .to('.card',{opacity:0,y:120,duration:.6},11.3)
-    .to('#book',{opacity:0,y:200,duration:.8},11)
-    .to('#tablet',{opacity:1,scale:1*S,rotateX:0,y:0,duration:1.4,ease:'power3.out'},11.4)
-    .fromTo('#tap',{opacity:0,scale:.6},{opacity:1,scale:1.3,duration:.4,yoyo:true,repeat:3},12.6);
-  chap(3,4,10.6);
-
-  // ACT 5: everything returns into a closed book, the tulip blooms, the brand arrives
-  tl.to('#tablet',{opacity:0,scale:.3*S,rotateX:-30,y:-80,duration:1,ease:'power3.in'},14)
-    .to('#book',{opacity:1,y:0,x:0,rotateX:10,rotateY:0,scale:.9*S,duration:1.2},14.3)
-    .to('#cover',{rotateY:0,duration:1.4,ease:'power3.inOut'},14.6)
-    .to('#anchor',{x:0,duration:1.2},14.6)
-    .to('#tulip',{opacity:1,x:mobile?-75:0,scale:mobile?1:1.35,y:mobile?60:-40,duration:1.2},15.3)
-    .to('#bloom',{scale:1.05,duration:1,ease:'back.out(2)'},15.6)
-    .to('#pl',{rotate:-14,duration:.8},15.8).to('#pr',{rotate:14,duration:.8},15.8)
-    .to(chaps[4],{opacity:0,y:-30,duration:.5},14.2)
-    .to('#anchor',{scale:.75,y:-60,duration:1.2},16.3)
-    .to('#finale',{opacity:1,duration:1},16.8)
-    .to('#finale .in',{y:0,duration:1},16.8)
-    ;
-
-  // fade the 3D scene behind the finale
-  tl.to('.scene',{opacity:.18,duration:1},16.8);
-
-  window.addEventListener('resize',function(){ScrollTrigger.refresh()});
+  addEventListener('resize',function(){ScrollTrigger.refresh()});
 })();
 </script>
 </body>
