@@ -1,0 +1,894 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>أبله موونا</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@500;700;800&display=swap">
+<style>
+/* Layout: the Abla Moona brand sheet brought to life — cream paper, deep green bands, tulip pink, gold round frames. Single committed light look (brand identity). */
+:root{
+  color-scheme:light;
+  --cream:#F7EEE3; --paper:#FFFBF5; --green:#163F2E; --green-2:#235A42; --pink:#E9A6B0; --pink-soft:#F8E1E4; --rose:#C7646F; --gold:#C9A15A; --gold-soft:#EBD9B4;
+  --ink:#1E2A24; --muted:#6A6259; --line:#EADBC8; --on-green:#FBF3E8;
+  --head:'Lalezar','Tajawal',system-ui,sans-serif; --body:'Tajawal',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-weight:500;font-size:17px;line-height:1.75;direction:rtl;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--green)}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit} button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px}
+h1,h2,h3,h4{font-family:var(--head);font-weight:400;margin:0;line-height:1.3;text-wrap:balance}
+
+/* top bar */
+header.top{background:var(--green);color:var(--on-green);position:sticky;top:env(safe-area-inset-top,0px);z-index:25;border-bottom:3px solid var(--gold)}
+header.top .wrap{display:flex;align-items:center;gap:12px;padding-block:8px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:46px;height:46px}
+.brand b{font-family:var(--head);font-weight:400;font-size:24px}
+nav.links{margin-inline-start:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav.links a{text-decoration:none;padding:4px 12px;border-radius:99px;font-size:15px;font-weight:700}
+nav.links a:hover,nav.links a[aria-current]{background:var(--gold);color:var(--green)}
+
+/* hero */
+.hero{background:radial-gradient(120% 90% at 85% 0%,var(--green-2),var(--green) 60%);color:var(--on-green);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;padding-block:34px 60px;position:relative;z-index:1}
+.hero .logo{width:min(220px,40vw);filter:drop-shadow(0 12px 24px rgba(0,0,0,.3))}
+.hero h1{font-size:clamp(34px,6.5vw,60px)}
+.hero h1 span{color:var(--pink)}
+.hero p{margin:6px 0 0;max-width:32em;font-size:18px;opacity:.92}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hero .scallop{position:absolute;inset:auto 0 -1px 0;height:26px;background:radial-gradient(circle at 13px 0,transparent 12px,var(--cream) 13px) repeat-x;background-size:26px 26px}
+.hero .tulip{position:absolute;left:4%;top:16px;width:110px;opacity:.22}
+@media (max-width:620px){.hero .wrap{grid-template-columns:1fr;justify-items:center;text-align:center}.hero .cta{justify-content:center}}
+
+main{padding-block:28px 70px}
+.crumbs{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;font-size:15px;color:var(--muted);margin-bottom:14px;font-weight:700}
+.crumbs a{text-decoration:none;color:var(--rose)}
+.crumbs .sep{color:var(--gold)}
+h2.view{font-size:clamp(30px,5vw,44px);color:var(--green)}
+p.lead{margin:2px 0 22px;color:var(--muted)}
+.sec-h{font-size:30px;color:var(--green);margin:36px 0 6px;display:flex;align-items:center;gap:10px}
+.sec-h::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 16px)}
+
+/* round badges (brand icons) */
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(42%,140px),1fr));gap:18px 14px}
+.badge{display:grid;justify-items:center;gap:8px;text-decoration:none;text-align:center}
+.badge img{width:min(150px,100%);aspect-ratio:1;border-radius:50%;box-shadow:0 10px 22px rgba(22,63,46,.18)}
+.badge b{font-family:var(--head);font-weight:400;font-size:22px;color:var(--green);line-height:1.2}
+.badge small{color:var(--muted);font-size:14px;line-height:1.4}
+@media (prefers-reduced-motion:no-preference){.badge img,.card,.spine,.lesson{transition:transform .2s,box-shadow .2s,border-color .2s}.badge:hover img{transform:translateY(-4px) rotate(-3deg)}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:99px;padding:10px 20px;font-weight:800;cursor:pointer;text-decoration:none;font-size:16px}
+.btn.gold{background:var(--gold);color:var(--green)}
+.btn.pink{background:var(--pink);color:var(--green)}
+.btn.green{background:var(--green);color:var(--on-green)}
+.btn.green:hover{background:var(--green-2)}
+.btn.line{background:transparent;border:2px solid var(--gold);color:inherit}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+/* generic card */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:14px}
+.card{background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:18px;display:grid;gap:6px;text-decoration:none;min-width:0;position:relative}
+a.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.card h3{font-size:24px;color:var(--green)}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.card.off{opacity:.62;border-style:dashed;background:transparent}
+.card .em{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--pink-soft);color:var(--rose);border:2px solid var(--gold-soft)}
+.card .em svg{width:28px;height:28px}
+.tag{display:inline-block;font-size:13px;font-weight:800;padding:2px 12px;border-radius:99px;line-height:1.6}
+.tag.full{background:var(--gold);color:var(--green)}
+.tag.ver{background:var(--pink-soft);color:var(--rose)}
+.tag.soon{border:1.5px dashed var(--muted);color:var(--muted)}
+.tag.free{background:var(--green);color:var(--on-green)}
+.tag.on{background:var(--green);color:var(--on-green)}
+
+/* subjects */
+.subj{grid-template-columns:auto 1fr;align-items:center;gap:14px}
+.subj .em{width:60px;height:60px}
+
+/* stage cards */
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.stage{background:var(--green);color:var(--on-green);border-radius:26px;padding:24px;text-decoration:none;display:grid;gap:6px;position:relative;overflow:hidden;border:3px solid var(--gold)}
+.stage:nth-child(2){background:var(--rose)}
+.stage h3{font-size:32px}
+.stage p{margin:0;opacity:.9}
+.stage .num{position:absolute;left:16px;bottom:-14px;font-family:var(--head);font-size:96px;line-height:1;color:var(--gold);opacity:.35}
+.stage .go{font-weight:800;color:var(--gold-soft)}
+
+/* grade spines */
+.spines{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px}
+.spine{display:grid;gap:4px;text-decoration:none;color:var(--on-green);background:var(--green);border-radius:20px 20px 8px 8px;padding:20px 18px;min-height:190px;align-content:space-between;position:relative;box-shadow:inset -12px 0 0 rgba(0,0,0,.12)}
+.spine:nth-child(2n){background:var(--rose)}
+.spine::before{content:"";position:absolute;inset-inline:14px;top:12px;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 13px)}
+.spine .g{font-family:var(--head);font-size:76px;line-height:1;color:var(--gold-soft)}
+.spine b{font-family:var(--head);font-weight:400;font-size:26px}
+.spine small{opacity:.88;font-size:15px}
+.spine:hover{transform:translateY(-4px)}
+
+.meter{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+.meter i{width:14px;height:14px;border-radius:50%;background:var(--line)}
+.meter i.on{background:var(--gold)}
+
+/* lessons */
+.lesson{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start;text-decoration:none;background:var(--paper);border:1.5px solid var(--line);border-radius:20px;padding:16px;min-width:0;text-align:right;cursor:pointer}
+.lesson:hover{border-color:var(--gold);transform:translateY(-2px)}
+.lesson .ic{width:52px;height:52px;border-radius:50%;background:var(--pink-soft);display:grid;place-items:center;color:var(--rose);border:2px solid var(--gold-soft)}
+.lesson .ic svg{width:28px;height:28px}
+.lesson h3{font-family:var(--body);font-size:18px;font-weight:800;margin:0 0 4px;line-height:1.4;color:var(--ink)}
+.lesson.soon{background:transparent;border-style:dashed}
+.lesson.soon .ic{background:transparent;color:var(--muted)}
+
+/* lesson page */
+.lessonhead{display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:center;margin-bottom:22px}
+.lessonhead .ic{width:76px;height:76px;border-radius:50%;background:var(--green);color:var(--pink);display:grid;place-items:center;border:3px solid var(--gold)}
+.lessonhead .ic svg{width:40px;height:40px}
+.versions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.ver{background:var(--paper);border:1.5px solid var(--line);border-radius:26px;padding:20px;display:grid;gap:12px;align-content:start;min-width:0}
+.ver.complete{border:2.5px solid var(--gold);box-shadow:0 10px 26px rgba(201,161,90,.18)}
+.ver header{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ver h3{font-size:28px;color:var(--green)}
+.pieces{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.piece{border-radius:16px;padding:10px 4px;text-align:center;font-size:14px;font-weight:800;background:var(--pink-soft);color:var(--green);display:grid;gap:4px;justify-items:center}
+.piece svg{width:24px;height:24px;color:var(--rose)}
+.piece.no{background:transparent;border:1.5px dashed var(--line);color:var(--muted);font-weight:500}
+.piece.no svg{color:var(--muted)}
+.hl{display:flex;flex-wrap:wrap;gap:6px}
+.hl span{font-size:14px;padding:3px 12px;border-radius:99px;background:var(--cream);border:1px solid var(--gold-soft)}
+.price{font-size:15px;color:var(--muted)}
+.price b{color:var(--green);font-size:18px}
+.pkg{background:var(--paper);border:2px dashed var(--rose);border-radius:24px;padding:20px 22px;margin:0 0 22px}
+.pkg h3{margin:0 0 6px;font-size:24px}.pkg p{margin:0 0 12px;color:var(--muted)}
+.pkg-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:12px}
+.pkg-items div{background:var(--pink-soft);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.pkg-items b{width:34px;height:34px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-size:18px}
+.pkg-items span{font-weight:700;font-size:19px;color:var(--ink)}.pkg-items small{color:var(--muted);font-size:15px;line-height:1.6}
+.pkg .pkg-note{margin:0;color:var(--ink);font-size:16px;line-height:1.8}
+.pkg-hint{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:4px}
+.note{background:var(--pink-soft);border:1.5px dashed var(--rose);border-radius:20px;padding:16px 18px;color:var(--ink)}
+
+/* previews */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.shots button{padding:0;border:1.5px solid var(--line);border-radius:14px;overflow:hidden;background:var(--cream);cursor:zoom-in;line-height:0;min-width:0}
+.shots button:first-child{grid-column:1/-1}
+.shots img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none}
+.shots button:first-child img{aspect-ratio:16/9}
+.shots button:not(:first-child) img{aspect-ratio:4/3;object-position:top}
+.shotcap{font-size:13px;color:var(--muted);margin-top:-4px}
+.vsub{font-size:15px;color:var(--rose);font-weight:800}
+#lb{position:fixed;inset:0;z-index:60;background:rgba(22,63,46,.92);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+#lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;border:3px solid var(--gold);background:var(--paper);-webkit-user-drag:none}
+/* game card */
+.game{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:var(--paper);border:2.5px solid var(--gold);border-radius:28px;overflow:hidden}
+.game img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9}
+.game .in{padding:22px;display:grid;gap:10px;align-content:center}
+.game h3{font-size:32px;color:var(--green)}
+.game ul{margin:0;padding-inline-start:20px;color:var(--muted)}
+@media (max-width:720px){.game{grid-template-columns:1fr}}
+.game.gen{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.game.gen .shots{padding:12px;align-content:center;background:var(--green);grid-template-columns:repeat(3,minmax(0,1fr))}
+.game.gen .shots img{height:100%}
+.game.gen .shots button{border-color:var(--gold)}
+.tag.soft{background:var(--pink-soft);color:var(--rose)}
+@media (max-width:720px){.game.gen{grid-template-columns:1fr}}
+
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.pcard{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;padding:20px;min-width:0}
+.pcard h3{font-size:26px;color:var(--green);margin-bottom:8px}
+.pcard table{width:100%;border-collapse:collapse;font-size:16px}
+.pcard td{padding:8px 0;border-bottom:1px dashed var(--line)}
+.pcard td:last-child{text-align:left;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--green)}
+.pcard tr.star td{color:var(--rose)}
+.stamp{margin-top:16px;background:var(--green);color:var(--on-green);border-radius:26px;padding:22px;display:grid;gap:10px;border:3px solid var(--gold)}
+.stamp h3{font-size:28px;color:var(--pink)}
+.stamp p{margin:0;opacity:.92}
+.dots{display:flex;gap:8px;flex-wrap:wrap}
+.dots i{width:36px;height:36px;border-radius:50%;border:2px dashed var(--gold);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800;color:var(--gold-soft)}
+.dots i.f{background:var(--gold);color:var(--green);border-style:solid}
+
+/* steps */
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start;background:var(--paper);border:1.5px solid var(--line);border-radius:20px;padding:16px}
+.step::before{counter-increment:s;content:counter(s,arabic-indic);width:52px;height:52px;border-radius:50%;background:var(--green);color:var(--gold-soft);display:grid;place-items:center;font-family:var(--head);font-size:26px;border:2px solid var(--gold)}
+.step h3{font-size:22px;color:var(--green)}
+.step p{margin:0;color:var(--muted)}
+.prose{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;padding:22px;max-width:46em}
+.prose p{margin:0 0 10px}
+.prose ul{margin:0;padding-inline-start:20px}
+.prose li{margin-block:6px}
+.split{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.split img{width:min(170px,40vw);border-radius:50%}
+@media (max-width:620px){.split{grid-template-columns:1fr;justify-items:center}}
+
+/* order sheet */
+.order{position:fixed;inset:auto 0 0 0;z-index:40;background:var(--paper);border-top:3px solid var(--gold);box-shadow:0 -12px 30px rgba(22,63,46,.2);padding-bottom:env(safe-area-inset-bottom,0px)}
+.order .wrap{padding-block:16px;display:grid;gap:10px}
+.order h4{font-size:24px;color:var(--green)}
+.order textarea{width:100%;min-height:120px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);color:var(--ink);font:inherit;font-size:16px;padding:10px;resize:vertical}
+.order .x{margin-inline-start:auto;background:none;border:0;font-size:28px;cursor:pointer;line-height:1;padding:4px 10px}
+
+footer{background:var(--green);color:var(--on-green);border-top:3px solid var(--gold)}
+footer .wrap{padding-block:22px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:15px}
+footer img{width:44px}
+footer a{color:var(--pink)}
+@media (max-width:520px){.lessonhead{grid-template-columns:58px 1fr}.lessonhead .ic{width:58px;height:58px}}
+/* product card: portrait previews */
+.game.prod .shots{padding:12px;align-content:center;background:var(--green);grid-template-columns:repeat(2,minmax(0,1fr))}
+.game.prod .shots button{grid-column:auto;border-color:var(--gold)}
+.game.prod .shots img{aspect-ratio:1/1.414;object-position:top;height:auto}
+.game.prod .feat{display:flex;flex-wrap:wrap;gap:6px}
+.game.prod .feat span{font-size:14px;padding:3px 12px;border-radius:99px;background:var(--cream);border:1px solid var(--gold-soft)}
+</style>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#home" aria-label="الرئيسية"><img src="img/logo.png" alt=""><b>أبله موونا</b></a>
+  <nav class="links" id="nav">
+    <a href="#subjects">دروس المواد</a><a href="#games">الألعاب والمسابقات</a><a href="#activities">الأنشطة الصفية</a><a href="#tools">أدوات المعلمة</a><a href="#workshops">الورش والإنماءات</a><a href="#prices">الأسعار</a><a href="#how">طريقة الطلب</a>
+  </nav>
+</div></header>
+
+<section class="hero" id="heroBand"><div class="wrap">
+  <img class="logo" src="img/logo.png" alt="شعار أبله موونا">
+  <div>
+    <h1>حصتج جاهزة<br><span>وبلمسة مختلفة</span></h1>
+    <p>عروض تقديمية تفاعلية، وتحاضير مرتبة، وأنشطة ومطبوعات، وألعاب تعليمية للمعلمات.</p>
+    <div class="cta"><a class="btn gold" href="#subjects">تصفحي المواد</a><a class="btn line" href="#games">الألعاب والمسابقات</a></div>
+  </div>
+  <svg class="tulip" viewBox="0 0 100 140" aria-hidden="true"><path d="M50 140V60" stroke="#E9A6B0" stroke-width="4" fill="none"/><path d="M50 62c-18-5-24-28-18-44 10 6 15 13 18 21 3-8 8-15 18-21 6 16 0 39-18 44z" fill="#E9A6B0"/><path d="M50 110c-20-2-34-16-38-34 18 2 32 14 38 34zM50 100c18-2 30-14 34-30-16 2-28 12-34 30z" fill="#C9A15A"/></svg>
+</div><div class="scallop"></div></section>
+
+<main><div class="wrap" id="view" aria-live="polite"></div></main>
+
+<footer><div class="wrap">
+  <img src="img/logo.png" alt="">
+  <span>أبله موونا</span>
+  <span>انستقرام: <a dir="ltr" href="https://instagram.com/abla.moona" target="_blank" rel="noopener">@abla.moona</a></span>
+  <span>واتساب: <a dir="ltr" href="https://wa.me/96555438624" target="_blank" rel="noopener">+965 5543 8624</a></span>
+  <a href="#about">من أنا</a><a href="#terms">الشروط</a>
+</div></footer>
+
+<div id="lb" hidden><img alt="" draggable="false"></div>
+<div class="order" id="order" hidden><div class="wrap">
+  <div class="row"><h4>رسالة الطلب</h4><button class="x" id="closeOrder" aria-label="إغلاق">×</button></div>
+  <label for="orderText" style="font-size:15px;color:var(--muted)">اكتبي اسم المدرسة في الرسالة، ثم اضغطي إرسال على الواتساب.</label>
+  <textarea id="orderText"></textarea>
+  <div class="row">
+    <a class="btn green" id="waLink" href="https://wa.me/96555438624" target="_blank" rel="noopener">إرسال على الواتساب</a>
+    <button class="btn line" id="copyOrder">نسخ الرسالة</button>
+    <span id="copied" style="color:var(--green-2);font-weight:800" hidden>تم النسخ</span>
+  </div>
+</div></div>
+
+<script>
+const ICONS={
+ home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>',
+ emb:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="5.5" stroke-dasharray="2 2"/><path d="M19 3L9 13"/><circle cx="19.5" cy="2.8" r="1"/></svg>',
+ tex:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="12" r="7"/><path d="M5 9c4 1 8 4 10 9M7 6c3 2 6 6 7 11M11 5c2 3 3 7 3 10"/><path d="M18 17c2 1 3 2 4 4"/></svg>',
+ fin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><ellipse cx="9" cy="7" rx="6" ry="2.5"/><path d="M3 7v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V7"/><path d="M9 16.5c-3.3 0-6-1.1-6-2.5"/><circle cx="17" cy="16" r="4.5"/><path d="M17 14v4"/></svg>',
+ teen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M16 4.5a3.5 3.5 0 010 7M18 14.5c1.8.8 3 2.8 3 5.5"/></svg>',
+ nut:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 7c-2-2-6-2-7.5 1.5S5 18 8 20c1.5 1 2.5.5 4 0 1.5.5 2.5 1 4 0 3-2 5-8 3.5-11.5S14 5 12 7z"/><path d="M12 7c0-2 1-3.5 3-4"/></svg>',
+ cook:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 10h16v6a4 4 0 01-4 4H8a4 4 0 01-4-4z"/><path d="M2 10h2M20 10h2M9 6c0-1 1-1.5 1-2.5M13 6c0-1 1-1.5 1-2.5"/></svg>',
+ sew:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 18h18M5 18V8a3 3 0 013-3h9a3 3 0 013 3v3h-6"/><path d="M14 11v4"/></svg>',
+ tour:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-5h6v5M3 20h18"/></svg>',
+ deck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg>',
+ prep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7M9 7h3"/></svg>',
+ print:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg>'
+};
+
+
+Object.assign(ICONS,{
+ islam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 3a8 8 0 100 18 9 9 0 010-18z"/><path d="M18 9l.8 1.6 1.7.3-1.2 1.2.3 1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.3z"/></svg>',
+ arabic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 14c0 3 2 5 6 5h4c4 0 6-3 6-6"/><path d="M12 6v6M9 4h.01M15 4h.01"/></svg>',
+ english:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19L9 5l5 14M6 14h6"/><path d="M16 12c0-1.5 1-2 2.5-2s2.5.8 2.5 2v7M21 15c-3 0-5 .5-5 2s1 2 2.5 2 2.5-1 2.5-2"/></svg>',
+ math:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 7h5M7.5 4.5v5M14 7h5M5 16l4 4M9 16l-4 4M14 16h5M14 19h5"/></svg>',
+ science:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/><path d="M7 15h10"/></svg>',
+ social:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>',
+ psych:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 1V5a3 3 0 00-3-1zM15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 1"/></svg>',
+ art:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3a9 9 0 100 18c1.5 0 2-1 2-2s-1-2 0-3 2 0 4 0 3-1 3-4c0-5-4-9-9-9z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg>',
+ pc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20M9 9l-2 2 2 2M15 9l2 2-2 2"/></svg>',
+ star:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>',
+ move:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="13" cy="4" r="2"/><path d="M8 21l3-6 3 2v4M6 12l3-4h5l2 4 3 1M11 8l-1 7"/></svg>',
+ cards:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="3" width="13" height="16" rx="2"/><path d="M4 7v12a2 2 0 002 2h10"/><path d="M11 9h5M11 13h5"/></svg>',
+ poster:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 12h16M12 3v18"/></svg>',
+ board:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20l2-4M16 20l-2-4M7 9h4M7 12h7"/></svg>'
+});
+const MIDDLE={
+ 6:{t1:[
+  ['maskan','المسكن','home',[{k:'maskan-1',d:1,p:1,r:1,h:['نسخة كرتونية للصف السادس']}]],
+  ['musahama','المساهمة في أداء الأعمال المنزلية','home',[{k:'musahama-1',d:1,p:1,r:1,h:['نسخة كرتونية للصف السادس']}]],
+  ['idara','الإدارة المنزلية','home',[{k:'idara-1',d:1,p:1,r:1,h:['لعبة أساسي أم غير أساسي','دور أسرتي في شخصيتي','دور الأم والأب']},{d:1},{k:'idara-3',d:1,p:1,r:1,h:['نسخة كرتونية جديدة']}]],
+  ['qiyam','القيم والأهداف','home',[{k:'qiyam-1',d:1,p:1,r:1,h:['مواقف من حياتنا','لعبة ما نوع القيمة','وزعي الأمثلة على أنواع القيم','اكتبي أهدافك']},{k:'qiyam-2',d:1,p:1,r:1,h:['أنواع الأهداف','سمات الهدف المؤثر','بطاقات أهمية القيم']},{k:'qiyam-3',d:1,p:1,r:1,h:['نسخة كرتونية جديدة']}]],
+  ['tareekh','تاريخ التطريز','emb',[{k:'tareekh-1',d:1,p:1,r:1,h:['لعبة المطرزة تقول','مشروع نورة للتطريز','رحلة التطريز حول العالم','محطات التخمين']},{k:'tareekh-2',d:1,p:1,r:1,h:['لعبة البازل','مصممة أزياء عالمية','لوني الجواب','الأبواب الملونة','خزانة جدتي التفاعلية']}]],
+  ['madkhal','مدخل إلى فن التطريز','emb',[{k:'madkhal-1',d:1,p:1,r:1,h:['سباق المجموعات','لغز المخترع','سحب البالون: أدوات التطريز','ورشة الإبرة التفاعلية']},{k:'madkhal-2',d:1,p:1,r:1,h:['غرفة سارة الخطيرة التفاعلية']}]],
+  ['aqd','طرق عقد وتثبيت الخيط','emb',[{k:'aqd-1',d:1,p:1,r:1,h:['الخيط الهارب','القطار العجيب','صناديق الخيوط','أسرع إبرة']}]],
+  ['sarraja','غرزة السراجة','emb',[{k:'sarraja-1',d:1,p:1,r:1,h:['رحلة غرزة السراجة','صناديق الغرز','لغز الغرز المختفية','المعلمة أخطأت']},{k:'sarraja-2',d:1,p:1,r:1,h:['تحدي الستين ثانية','صناديق الغرز','لغز الغرز المختفية','ملف القضية','سباق الإبرة التفاعلي']}]],
+  ['battaniya','غرزة البطانية','emb',[{k:'battaniya-1',t:'مزرعة الصوف',d:1,p:1,r:1,h:['الخراف الهاربة','حظيرة الاستخدامات','السياج المكسور','ترتيب السياج','راعية السياج التفاعلية']}]],
+  ['ankabout','غرزة عش العنكبوت','emb',[{k:'ankabout-1',t:'النوع الأول',d:1,p:1,r:1,h:['صندوق خيوط الغامض','سباق حقيبة الخياطة','محطات صيد الأخطاء','معرض الشبكات الذهبية']},{p:1,r:1,h:['التعلم التعاوني','ورقة عمل جماعية']},{d:1,p:1,h:['عجلة الخيوط','رتبي البطاقات','تحدي الإتقان','لغز صندوق الخيوط المفقود']},{k:'ankabout-4',t:'النوع الثاني: الفردية',d:1,p:1,r:1,h:['لوحة التوائم','قفزة الأعداد','ملف الوردات الحائرة','وصفة النجاة']}]],
+  ['theel','غرزة الثيل','emb',[]],
+  ['azrar','الأزرار','emb',[]],
+  ['inhaa','الإنهاء','emb',[]]
+ ]},
+ 7:{t1:[
+  ['mawared','إدارة الموارد المالية للأسرة','fin',[{k:'mawared-1',d:1,p:1,r:1,h:['الخزنة العائلية','صرّاف الأسرة الآلي','أكياس الدراهم الأربعة','مديرة الخزنة التفاعلية']}]],
+  ['dakhl','مصادر الدخل','fin',[{k:'masader-1',d:1,p:1,r:1,h:['رسائل البنك','حديقة نورة السرية','كم وفّرنا؟','المصعد المالي','ساعة المصروفات','واحة نورة التفاعلية']}]],
+  ['mizaniya','الميزانية','fin',[{k:'mizania-1',d:1,p:1,r:1,h:['لوحة المغادرة','بطاقة صعود دانة','سير الحقائب','الطيار الآلي','خريطة الكنز المالي','ميزان الأمتعة','حقيبة دانة الذكية التفاعلية']}]],
+  ['waqt','إدارة الوقت والطاقة','home',[{k:'waqt-1',t:'بطارية لولوة',d:1,p:1,r:1,h:['شواحن الطاقة','يوم لولوة','شاحن أم دخيل','قبل وبعد التخطيط','سلّم الشحن']},{k:'waqt-2',t:'وصفة يوم ناجح',d:1,p:1,r:1,h:['مكونات اليوم','سلة المكونات الفاسدة','مطبخ أم هند','طبق متقن وطبق محروق','لجنة التذوق']},{k:'waqt-3',t:'غرفة الهروب',d:1,p:1,r:1,h:['مفاتيح الوقت','الظرف السري','القفز أو التجمّد','المكتبان','خطة الهروب','زوايا الحكم']}]],
+  ['alyaf','ألياف النسيج','tex',[{k:'alyaf-1',d:1,p:1,r:1,h:['لعبة خلف البكرة سؤال','فيديو الغزل اليدوي والسدو','بطاقات ورقية']},{k:'alyaf-2',d:1,p:1,r:1,h:['الصندوق الغامض','صناديق السدو','بطاقات الألياف']}]],
+  ['naql','نقل الرسمة','emb',[{k:'naql-1',d:1,p:1,r:1,h:['جاوبي وأنتِ','لغز الوردة الناقصة','نقل التصميم','بكرة الخيط']}]],
+  ['nabbata','غرزة النباتة','emb',[{k:'nabata-1',d:1,p:1,r:1,h:['ورقتي الخضراء','لغز النبتة الغامضة','رحلة المحطات','النوافذ الملونة']},{k:'nabata-2',d:1,p:1,r:1,h:['العصف الذهني','البطاقات الملونة','بوصلة غرزة النباتة']}]],
+  ['margrit','غرزة المارجريت','emb',[{k:'marg-1',d:1,p:1,r:1,h:['زهرة الكلمات','لقطة الكاميرا','بتلات النوير']},{k:'marg-2',d:1,p:1,r:1,h:['بتلات النوّير التفاعلية']}]],
+  ['buthoor','غرزة البذور','emb',[{k:'bothur-1',d:1,p:1,r:1,h:['عداد البذور','استراتيجية الآيس كريم']}]],
+  ['rijl','غرزة رجل الغراب','emb',[{p:1}]],
+  ['abli','الأبليكاسيون','emb',[]]
+ ]},
+ 8:{t1:[
+  ['shakhsiya','الشخصية والاستقامة','teen',[{k:'shakhsiya-1',d:1,p:1,r:1,h:['بيت شخصيتي التفاعلي']}]],
+  ['murahiq','المشكلات التي تواجه المراهق','teen',[{k:'mushkilat-1',t:'مشكلة الإدمان',d:1,p:1,r:1,h:['منارة القرار التفاعلية']}]],
+  ['idman','الإدمان الإلكتروني','teen',[{k:'idman-1',d:1,p:1,r:1,h:['الهروب من الشاشة التفاعلي']}]],
+  ['unf','العنف والعدوان','teen',[{k:'unf-1',d:1,p:1,r:1,h:['لعبة صندوق الهدايا','قلبي لا يعرف العنف','جسر السلام التفاعلي']},{k:'unf-2',d:1,p:1,r:1,h:['قلبي لا يعرف العنف','كيف نعالج العنف','فكري وناقشي: أين الخطأ','ترمومتر الغضب التفاعلي']}]],
+  ['sooe','الأمراض الناتجة عن سوء التغذية','nut',[{k:'tagh-1',t:'السمنة والنحافة الشديدة',d:1,p:1,r:1,h:['أنا أخصائية تغذية','سبب للسمنة أم ليس سببًا','عيادة التغذية التفاعلية']},{d:1,h:['لعبة من أنا','المحطات الحركية','لعبة الميزان: يساعد أم يضر']}]],
+  ['faqr','فقر الدم وداء السكري','nut',[{k:'faqr-1',t:'رحلة في الدم',d:1,p:1,r:1,h:['الصندوق الغامض','المحققة الصحية','بابين وخاصية','عجلة الأظرف','مختبر الدم التفاعلي']},{d:1,p:1,r:1,h:['الصندوق الغامض','مؤشر الإصبع للتوصيل','عجلة الأظرف']},{d:1,h:['رحلة صحتي التفاعلية','ثماني محطات']}]],
+  ['hadm','عسر الهضم','nut',[{k:'hadm-1',t:'رحلة اللقمة',d:1,p:1,r:1,h:['خرائط الكنز','النوافذ الملونة','خريطة المحطات','أسرع ملعقة قياس','ألواح الشوفان والعسل']}]],
+  ['dawra','آلام الدورة الشهرية (الرنكينة)','nut',[{k:'dawra-1',d:1,p:1,r:1,h:['مقهى المعرفة','صندوق الراحة','لعبة صحون الرطب','الرنكينة']}]],
+  ['hob','حب الشباب','nut',[{d:1,p:1,r:1,h:['البشرة تصفى قطعة قطعة','يوميات نورة','تبولة الكينوا']},{k:'hob-2',d:1,p:1,r:1,h:['التبولة ومشروب الديتوكس','يوم في حياة بشرتي التفاعلي']}]],
+  ['shaar','تساقط الشعر','nut',[{k:'shaar-1',t:'مرآة ديمة',d:1,p:1,r:1,h:['مشط ديمة يشتكي','محطات الخصلات','طبق الجذور','مرآة ديمة','ساندويش التونة','مرآة ديمة التفاعلية']}]],
+  ['asnan','الأسنان','nut',[]],
+  ['shahiya','فقد الشهية','nut',[]]
+ ]},
+ 9:{t1:[
+  ['tahfeez','تنمية المهارات الاجتماعية للمراهق','teen',[{k:'muharat-1',d:1,p:1,r:1,h:['نشاط تفاعلي']}]],
+  ['tawasul','مهارة التواصل بين الأجيال','teen',[{k:'ajyal-1',d:1,p:1,r:1,h:['نشاط تفاعلي']}]],
+  ['tatawu','مهارة العمل التطوعي','teen',[{k:'tatawwu-1',d:1,p:1,r:1,h:['صممي مشروعك','لعبة الختام','رتبي البطاقات']},{k:'tatawwu-2',d:1,p:1,r:1,h:['لعبة صنفي الموقف']}]],
+  ['mumarasa','ممارسة العمل التطوعي داخل المدرسة','teen',[{k:'mumarasa-1',d:1,p:1,r:1,h:['نشاط تفاعلي']}]],
+  ['taqa','الطاقة الغذائية','nut',[{d:1,p:1,r:1,h:['ملف قضية سري','الميزان الحي','اختاري الطبق','توقعي ثم تحققي']},{k:'taqa-2',d:1,p:1,r:1,h:['لعبة البازل','فيديو أهمية الغذاء الصحي']}]],
+  ['qawaed','القواعد العامة للطهي','cook',[]],
+  ['qiyas','قياس المواد الغذائية','cook',[{k:'qiyas-1',d:1,p:1,r:1,h:['نشاط تفاعلي بأربع محطات','لعبة العجلة','الظرف العشوائي']}]],
+  ['ratba','الطهي بالحرارة الرطبة','cook',[{k:'ratba-1',d:1,p:1,r:1,h:['القدر ولا الطاجن','تطبيق البيض المسلوق','نشاط من أنا']},{d:1,p:1,r:1,h:['سلق وتسبيك المعكرونة','من أنا']},{d:1,p:1,r:1,h:['أظرف النرد','سؤال حركي بالتصفيق']},{d:1,p:1,r:1,h:['صندوق الأسئلة','من أنا']},{d:1,p:1,r:1,h:['لقطة الكاميرا','فقاعات السلق']}]],
+  ['jaffa','الطهي بالحرارة الجافة','cook',[{k:'jaffa-1',d:1,p:1,r:1,h:['الفرن الغامض','محكمة المطبخ','أظرف النرد','صينية الشيف']},{d:1,p:1,r:1,h:['ركبي الحروف','لعبة الأفران']},{d:1,p:1,r:1}]],
+  ['duhniya','الطهي بالمادة الدهنية','cook',[{k:'dohn-1',d:1,p:1,r:1,h:['نشاط تفاعلي']},{k:'dohn-2',d:1,p:1,r:1,h:['نشاط تفاعلي']}]],
+  ['hifz','حفظ الأغذية','cook',[{k:'hifz-1',d:1,p:1,r:1,h:['نشاط تفاعلي']}]],
+  ['tadweer','إعادة تدوير الأطعمة','cook',[{k:'tadweer-1',t:'حفظ النعمة',d:1,p:1,r:1,h:['نشاط تفاعلي']},{k:'tadweer-2',t:'قروب بيت جدتي: كروكيت الدجاج',d:1,p:1,r:1,h:['رسالة صوتية من جدتي','استطلاعات القروب','وصلت ولا انحذفت؟','ورقة عمل ردّي على جدتي','دفتر وصفات جدتي','لعبة مطبخ القروب التفاعلية']},{k:'tadweer-3',t:'سفرة يدّه: أطراف التوست',d:1,p:1,r:1,h:['صوت جدتي من الراديو القديم','خريطة سفرة يدّه','ميزان يدّه','رفوف الروشنة','قدور يدّه','دفتر وصفات الجدة','لعبة سفرة يدّه التفاعلية']}]],
+ ]}
+};
+const OTHER={
+ psych:{name:'علم النفس وعلم الاجتماع',where:'الثانوي',note:'عروض كينوت بدون إنترنت: كل الأنشطة والفيديوهات داخل العرض، وبمعلومات الكتاب فقط.',groups:[
+  {name:'علم النفس: الانفعالات',lessons:[
+   ['infial','الانفعالات',[{d:1,h:['أنواع الانفعالات','المكونات الخمسة','دائرة الانفعالات']}]],
+   ['khawf','الخوف',[{d:1,h:['المخاوف والخوف المرضي','كيف نتغلب على الخوف']}]],
+   ['ghadab','الغضب',[{d:1,h:['أسباب الغضب','التغلب عليه عند الأطفال']}]]]},
+  {name:'علم الاجتماع',lessons:[
+   ['tafaul','التفاعل الاجتماعي والمكانة والدور',[{d:1,h:['بطاقات الأدوار','نشاط صورة الفصل']}]],
+   ['hawiya','الهوية الاجتماعية',[{d:1,h:['مصادر الهوية الستة','مكونات الهوية']}]],
+   ['dabt','الضبط الاجتماعي',[{d:1,h:['المحكمة','قصر العدل']}]],
+   ['taghayyur','التغير الاجتماعي',[{d:1,h:['آلة الزمن','مثال النفط في الكويت']}]]]}]},
+ mh:{name:'الصحة النفسية',where:'الثاني عشر اختيار حر',note:'حسب توزيع الكورس الأول ٢٠٢٦/٢٠٢٧.',groups:[
+  {name:'الكورس الأول',lessons:[
+   ['mafhoom','مفهوم الصحة والصحة النفسية',[{k:'mh-mafhoom-1',t:'معرض الصحة التفاعلي',d:1,p:1,r:1,h:['قاعات المعرض الأربع','الإضاءة تتنقل بين المواصفات الخمس','أركان المعرض الحركي','قاعة الحوار','نشاط الصور الست','تعريفان في ميزان واحد','حالة ليلى','ورقة عمل دليل زائرة المعرض','جهاز المسح الصحي التفاعلي']}]],['takamuli','المفهوم التكاملي للصحة النفسية',[]],['alamat','علامات الصحة النفسية ومعايير السواء',[]],
+   ['inmai','مناهج البحث: المنهج الإنمائي',[]],['wiqai','المنهج الوقائي',[]],['ilaji','المنهج العلاجي',[]],
+   ['shakhsiya','الصحة النفسية والشخصية',[]],['tahlil','الصحة النفسية والتحليل النفسي وأبعاد الشخصية',[]],
+   ['abaad','تعريف التوافق وأبعاد التوافق',[{k:'mh-abaad-1',t:'استوديو الصوت',d:1,p:1,r:1,h:['رحلة إلى المدرسة وجهاز الملاحة','اضبطي المستوى','ميكسر الأبعاد','صدى البُعد','فيديو الهدية','ورقة عمل قائمة تشغيل التوافق','استوديو التوافق التفاعلي']},{k:'mh-abaad-2',t:'منطاد التوافق',d:1,p:1,h:['ميزان الفقاعة','فيديو الحرباء','جزر الأبعاد','قبل وبعد','عجلة الأبعاد','منطاد التوافق التفاعلي']}]],
+   ['mataleb','التوافق ومطالب النمو',[{k:'mh-mataleb-1',t:'تحديث النظام',d:1,h:['إشعار التحديث','وحدات التحديث','فيديو من صفر إلى ٢٣','حدّثي نظامكِ التفاعلي']},{k:'mh-mataleb-2',t:'ألبوم نورة',d:1,p:1,r:1,h:['الصورة الأولى والإطار الفارغ','صفحات الألبوم بصور حقيقية','صورة ناقصة','زوايا الألبوم الحركي','فيلم باو','ماذا تحتاج نورة؟','لقطة جماعية','ورقة عمل صفحة من ألبومي','استوديو تحميض نورة التفاعلي']}]],
+   ['asaleeb','أساليب التوافق',[{k:'mh-asaleeb-1',t:'سحابة العاصفة',d:1,p:1,r:1,h:['سحابة العاصفة تتحول مع كل أسلوب','تنفس الصندوق','تجربة الصخور والرمل في الجرة','جسر الطريقين المباشر وغير المباشر','ورقة عمل يومي بلا غيمة','بطاقات أساليب التوافق','غرفة الأرصاد النفسية التفاعلية']},{k:'mh-asaleeb-2',t:'رحلة الهدوء',d:1,p:1,r:1,h:['خريطة رحلة تطير فيها الطائرة بين المحطات','إعلان من قمرة القيادة','ممر الطائرة الحركي','تمرين قناع الأكسجين بالصوت','تمارين المقعد','وجبة الرحلة','فيديو تجربة الجرة','ورقة عمل جدول رحلتي','رحلة الهدوء التفاعلية']}]],
+   ['tadribat','تدريبات وممارسات تطبيقية',[{k:'mh-tadribat-1',t:'غرفة الهروب من الضغط',d:1,p:1,r:1,h:['باب الهدوء بأربعة أقفال ومفتاح يتحرك','المخطط السهمي لأساليب التوافق','باب الهدوء وباب الهروب الحركي','قياس النبض قبل الاسترخاء وبعده','فيديو تمرين الاسترخاء','مقطعا الثعلب والعنب ومستر بين','الأقنعة الثلاثة الحركي','الخزنة الأخيرة لتخطيط الأسبوع','ورقة عمل شيفرة الهدوء','خزنة الهدوء التفاعلية']}]]]}]},
+ social:{name:'الاجتماعيات',where:'الصف التاسع',note:'التحضير بالنموذج الملوّن ذي الأعمدة الأربعة.',groups:[
+  {name:'دروس جاهزة',lessons:[['talawuth','التلوث البيئي',[{k:'talawuth-1',t:'التلوث البيئي مشكلة عالمية',d:1,p:1,r:1,h:['الصورة الغامضة','ملفات الأدلة السرية','جريدة البيئة اليوم','سباق التصنيف','حماة الأرض التفاعلية']}]]]}]},
+ science:{name:'العلوم',where:'حسب الطلب',note:'دروس العلوم نجهزها لج حسب الطلب: عرض وتحضير ومطبوعات.',groups:[]}
+};
+const SECONDARY=[
+ {id:'res',name:'إدارة الموارد',icon:'sew',terms:[
+  {id:'t1',name:'الكورس الأول',rich:1,lessons:[["hs11","المكونات الأساسية للحياة والقيم",[{k:"hs1-1-1",d:1,p:1,r:1,h:["عالم بوصلة الحياة", "بطاقات القيم", "بوصلة القرار التفاعلية"]}]],
+   ["hs12","الأهداف",[{k:"hs1-2-1",d:1,p:1,r:1,h:["سلّم الأهداف", "فيديو البامبو", "لعبة الأهداف"]}]],
+   ["hs13","الموارد واختيار نوع القطعة وتحديد مستلزمات العمل",[{k:"hs1-3-1",d:1,p:1,r:1,h:["فيديو نك فوجيتش", "أنواع الموارد", "اختيار القطعة"]}]],
+   ["hs14","وضع الباترون على القماش وقصه وأخذ العلامات",[{k:"hs1-4-1",d:1,p:1,r:1,h:["فيديو قص القماش", "خطوات الباترون", "تطبيق عملي"]}]],
+   ["hs15","تركيب أجزاء القطعة الفنية وتزيين القطعة",[{k:"hs1-5-1",d:1,p:1,r:1,h:["فيديو تزيين الكوشية", "خطوات التركيب", "تطبيق عملي"]}]],
+   ["hs16","تمكين القطعة باستخدام ماكينة الخياطة",[{k:"hs1-6-1",d:1,p:1,r:1,h:["خيط التقدم", "فيديو الكوشية", "مفتشة الجودة التفاعلية"]}]],
+   ["hs17","إنهاء القطعة باستخدام الأوفرلوك وتنظيف القطعة وكيها",[{k:"hs1-7-1",d:1,p:1,r:1,h:["فيديو الأوفرلوك", "خطوات الإنهاء", "طاولة التشطيب التفاعلية"]}]],
+   ["hs18","إدارة الوقت",[{k:"hs1-8-1",d:1,p:1,r:1,h:["الساعة الرملية", "فيديو ٨٦٤٠٠ ثانية", "صيّادة لصوص الوقت التفاعلية"]}]],
+   ["hs19","الخريطة الذهنية والتدريب على عمل خريطة ذهنية",[{k:"hs1-9-1",d:1,p:1,r:1,h:["العرض خريطة ذهنية", "فيديو خطوات الخريطة", "شبكة الأفكار التفاعلية"]}]],
+   ["hs110","التخطيط المهني",[{k:"hs1-10-1",d:1,p:1,r:1,h:["رحلة الطيارة", "فيديو المهن", "مكتب المستشارة التفاعلية"]}]],
+   ["hs111","اتخاذ قرار مهني والتدريب على كتابة السيرة الذاتية والمقابلة الشخصية",[{k:"hs1-11-1",d:1,p:1,r:1,h:["جدار القصص ثم السيرة الذاتية", "فيديوهان: أخطاء السيرة ومواقف المقابلة", "مدقّقة السير التفاعلية"]}]],
+   ["hs113","المراجعة العامة",[]]]},
+  {id:'t2',name:'الكورس الثاني',rich:1,lessons:[["hs21","إدارة الموارد المالية",[{d:1,p:1,r:1}]],
+   ["hs22","الميزانية",[{k:"hs2-2-1",d:1,p:1,r:1,h:["تقويم الشهر", "الميزان الذهبي", "ميزان بيت العائلة التفاعلية"]}]],
+   ["hs23","تخطيط وإدارة الدخل المالي وتنظيم سجل الميزانية",[{k:"hs2-3-1",d:1,p:1,r:1,h:["بيت الدينار", "فيديو كاكيبو", "حارسة أبواب البيت التفاعلية"]}]],
+   ["hs24","تخفيض النفقات المرنة والحاسب الآلي",[{k:"hs2-4-1",d:1,p:1,r:1,h:["مقص الفاتورة", "فيديو حيل السوبرماركت", "عربة الجمعية الذكية التفاعلية"]}]],
+   ["hs25","الادخار",[{k:"hs2-5-1",d:1,p:1,r:1,h:["دفتر حساب التوفير", "فيديو جرة الأحلام", "حصالتي الطائرة التفاعلية"]}]],
+   ["hs26","المستهلك والقانون",[{k:"hs2-6-1",d:1,p:1,r:1,h:["قضية رقم ٧", "فيديو بائع الدجاج المحتال", "محققة السوق التفاعلية"]}]],
+   ["hs27","الدعاية",[{k:"hs2-7-1",d:1,p:1,r:1,h:["رحلة الرسالة", "فيديو خدع المحلات", "مطار الرسائل التفاعلية"]}]],
+   ["hs28","الإعلان",[{k:"hs2-8-1",d:1,p:1,r:1,h:["بلاتوه التصوير", "فيديو لكل نوع إعلان", "غرفة البث التفاعلية"]}]],
+   ["hs29","اتخاذ قرارات التسوق",[{k:"hs2-9-1",d:1,p:1,r:1,h:["عربة تمتلي", "فيديو الوشاح الأخضر", "مصعد المول التفاعلية"]}]],
+   ["hs210","التسوق الإلكتروني",[{k:"hs2-10-1",d:1,p:1,r:1,h:["تطبيق طلبيتي", "فيديو The Social Dilemma", "لعبة طلبيتي التفاعلية"]}]],
+   ["hs211","خيارات التسوق الأخرى",[]],
+   ["hs212","مقارنة التسوق",[]],
+   ["hs213","المراجعة العامة",[]]]}]},
+ {id:'hos',name:'إدارة الضيافة والسياحة',icon:'tour',terms:[
+  {id:'t1',name:'الكورس الأول',lessons:['الضيافة والسياحة وتطورهما','أنواع السياحة وتعريف الضيافة والسياحة','ضيافة حفل الاستقبال','المرافق والمنشآت السياحية','إعداد وتنظيم الرحلات','وجبات الرحلات بوصفات صحية',{n:'الفنادق وتصنيفاتها',v:1},'طرق حجز الفنادق',{n:'الموارد البشرية ووظائف العاملين',v:1},'إدارة الحفلات والمناسبات والمؤتمرات']},
+  {id:'t2',name:'الكورس الثاني',lessons:[{n:'إعداد وتجهيز الحفلات والمناسبات والمؤتمرات',v:1},{n:'أنواع قوائم الطعام',v:1},{n:'طرق وخدمات تقديم الطعام في الحفلات والمناسبات والمؤتمرات',v:1},{n:'آداب وسلوك المائدة',v:1},{n:'تنظيم الحفلات والمناسبات والمؤتمرات',v:1},{n:'التطور السياحي في دولة الكويت',v:1},{n:'طبيعة السياحة والجوانب السياحية في المجتمع الكويتي',v:1},{n:'النظرة المستقبلية لتطوير السياحة في دولة الكويت',v:1}]}]}
+];
+
+const SUBJECTS=[
+ {id:'econ',name:'الاقتصاد المنزلي',icon:'home',on:true,desc:'المتوسط والثانوي: دروس جاهزة بنسخ متعددة'},
+ {id:'s-science',name:'العلوم',icon:'science',on:true,desc:'دروس حسب الطلب'},
+ {id:'s-social',name:'الاجتماعيات',icon:'social',on:true,desc:'الصف التاسع: تحضير بالنموذج الملوّن وعرض'},
+ {id:'s-psych',name:'علم النفس والاجتماع',icon:'psych',on:true,desc:'الثانوي: سبعة عروض كينوت جاهزة'},
+ {id:'s-mh',name:'الصحة النفسية',icon:'psych',on:true,desc:'الثاني عشر اختيار حر: عروض وتحاضير'},
+ {id:'islam',name:'التربية الإسلامية',icon:'islam'},
+ {id:'arabic',name:'اللغة العربية',icon:'arabic'},
+ {id:'english',name:'اللغة الإنجليزية',icon:'english'},
+ {id:'math',name:'الرياضيات',icon:'math'},
+ {id:'pc',name:'الحاسوب',icon:'pc'},
+ {id:'art',name:'التربية الفنية',icon:'art'}
+];
+const ACTIVITIES=[
+ ['بطاقات استراتيجيات التعلم النشط','cards','بطاقات جاهزة لاستراتيجيات تنفع أي درس'],
+ ['أوراق عمل إبداعية','print','قوالب أوراق عمل تكتبين فيها أسئلة مادتج'],
+ ['بطاقات السبورة','board','بطاقات كبيرة للعناوين والمفاهيم والترتيب على السبورة'],
+ ['أنشطة حركية للصف','move','أسئلة قيام وجلوس ومحطات تنفع كل المواد'],
+ ['بوسترات ولوحات صفية','poster','لوحات للفصل وطريقة البوستر المقسم']
+];
+const AR=['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+const ar=n=>String(n).replace(/\d/g,d=>AR[d]);
+const GRADE_NAME={6:'السادس',7:'السابع',8:'الثامن',9:'التاسع'};
+const isFull=v=>v.d&&v.p&&v.r;
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const V=document.getElementById('view'), hero=document.getElementById('heroBand');
+const C={home:['الرئيسية','home'],subj:['المواد','subjects'],econ:['الاقتصاد المنزلي','econ'],mid:['المتوسط','middle'],sec:['الثانوي','secondary']};
+
+function crumbs(items){return '<nav class="crumbs" aria-label="المسار">'+items.map((it,i)=>i<items.length-1?`<a href="#${it[1]}">${it[0]}</a><span class="sep">◆</span>`:`<span>${it[0]}</span>`).join('')+'</nav>';}
+function verLabel(n){return n===1?'نسخة واحدة':n===2?'نسختان':ar(n)+' نسخ'}
+function versionsSummary(vs){if(!vs.length) return '<span class="tag soon">قريبًا</span>';const full=vs.filter(isFull).length;return `<span class="tag ver">${verLabel(vs.length)}</span>`+(full?` <span class="tag full">باقة كاملة</span>`:'');}
+function countGrade(g){const L=MIDDLE[g].t1;return {all:L.length,ready:L.filter(l=>l[3].length).length};}
+function setNav(key){document.querySelectorAll('#nav a').forEach(a=>{a.getAttribute('href')==='#'+key?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')})}
+
+const BADGES=`<div class="badges">
+  <a class="badge" href="#subjects"><img src="img/badge-subjects.png" alt=""><b>دروس المواد</b><small>عرض وتحضير ومطبوعات</small></a>
+  <a class="badge" href="#games"><img src="img/badge-games.png" alt=""><b>الألعاب والمسابقات</b><small>للحصة وللمناسبات</small></a>
+  <a class="badge" href="#activities"><img src="img/badge-activities.png" alt=""><b>الأنشطة الصفية</b><small>حقيبة أبله موونا والمطبوعات</small></a>
+  <a class="badge" href="#tools"><img src="img/badge-tools.png" alt=""><b>أدوات المعلمة</b><small>الشهادات ولوحة الصف ودفتر المعلمة</small></a>
+  <a class="badge" href="#workshops"><img src="img/badge-workshops.png" alt=""><b>الورش والإنماءات</b><small>للمعلمات</small></a>
+  <a class="badge" href="#how"><img src="img/icon-order.png" alt=""><b>طريقة الطلب</b><small>عبر الواتساب</small></a>
+</div>`;
+
+function viewHome(){
+  hero.hidden=false; setNav('');
+  let ready=0,vers=0;for(const g in MIDDLE){for(const l of MIDDLE[g].t1){if(l[3].length)ready++;vers+=l[3].length}}
+  V.innerHTML=BADGES+`
+  <h2 class="sec-h">المواد</h2>
+  <div class="grid">${SUBJECTS.slice(0,4).map(subjCard).join('')}<a class="card" href="#subjects" style="align-content:center;justify-items:center;text-align:center"><h3>كل المواد</h3><p>${ar(SUBJECTS.length)} مواد</p></a></div>
+  <h2 class="sec-h">أحدث منتج</h2>${fanniCard()}
+  <h2 class="sec-h">شهادات وبطاقات التعزيز</h2>${certsCard()}
+  <h2 class="sec-h">لوحة الصف: أدوات إدارة الصف</h2>${classCard()}
+  <h2 class="sec-h">دفتر المعلمة الرقمي للآيباد</h2>${plannerCard()}
+  <h2 class="sec-h">دفتر المعلمة للطباعة</h2>${printPlannerCard()}
+  <h2 class="sec-h">باقة رئيسة القسم</h2>${deptCard()}
+  <h2 class="sec-h">باقة العيد الوطني والتحرير</h2>${ndCard()}
+  <h2 class="sec-h">ملف الإنجاز للمعلمة</h2>${achvCard()}
+  <h2 class="sec-h">أحدث لعبة</h2>${genCard()}
+  <h2 class="sec-h">هدية مجانية</h2>${gameCard()}
+  <h2 class="sec-h">الاقتصاد المنزلي بالأرقام</h2>
+  <div class="grid">
+    <div class="card"><h3>${ar(ready)} درسًا</h3><p>جاهزة في المرحلة المتوسطة</p></div>
+    <div class="card"><h3>${ar(vers)} نسخة</h3><p>كل نسخة بأنشطة مختلفة</p></div>
+    <div class="card"><h3>٤ صفوف</h3><p>من السادس إلى التاسع، والثانوي قيد التجهيز</p></div>
+  </div>`;
+}
+function subjCard(s){
+  return s.on?`<a class="card subj" href="#${s.id}"><span class="em">${ICONS[s.icon]}</span><span><h3>${s.name}</h3><p>${s.desc}</p></span></a>`
+             :`<div class="card subj off"><span class="em">${ICONS[s.icon]}</span><span><h3>${s.name}</h3><p><span class="tag soon">قريبًا</span></p></span></div>`;
+}
+function viewSubjects(){
+  hero.hidden=true; setNav('subjects');
+  V.innerHTML=crumbs([C.home,['المواد']])+`<h2 class="view">المواد</h2><p class="lead">اختاري المادة. المواد الجديدة تنضاف أولًا بأول، وتقدرين تطلبين درس من أي مادة كطلب جديد.</p>
+  <div class="grid">${SUBJECTS.map(subjCard).join('')}</div>
+  <div class="note" style="margin-top:18px">مادتج مو موجودة؟ <button class="btn pink" style="margin-inline-start:8px" data-order="درس من مادة أخرى|المادة: |طلب جديد">اطلبي درس من مادتج</button></div>`;
+}
+function viewEcon(){
+  hero.hidden=true; setNav('subjects');
+  V.innerHTML=crumbs([C.home,C.subj,['الاقتصاد المنزلي']])+`<h2 class="view">الاقتصاد المنزلي</h2><p class="lead">اختاري المرحلة.</p>
+  <div class="stages">
+    <a class="stage" href="#middle"><span class="num">٦–٩</span><h3>المرحلة المتوسطة</h3><p>إدارة المنزل، التطريز، التغذية، الطهي، المهارات الاجتماعية.</p><span class="go">ادخلي ←</span></a>
+    <a class="stage" href="#secondary"><span class="num">١١–١٢</span><h3>المرحلة الثانوية</h3><p>علوم الأسرة والمستهلك: إدارة الموارد، والضيافة والسياحة.</p><span class="go">ادخلي ←</span></a>
+  </div>`;
+}
+function viewMiddle(){
+  hero.hidden=true; setNav('subjects');
+  V.innerHTML=crumbs([C.home,C.subj,C.econ,['المرحلة المتوسطة']])+`<h2 class="view">المرحلة المتوسطة</h2><p class="lead">اختاري الصف.</p>
+  <div class="spines">${[6,7,8,9].map(g=>{const c=countGrade(g);return `<a class="spine" href="#g${g}"><span class="g">${ar(g)}</span><b>الصف ${GRADE_NAME[g]}</b><small>${ar(c.ready)} من ${ar(c.all)} دروس جاهزة</small></a>`}).join('')}</div>`;
+}
+function viewGrade(g){
+  hero.hidden=true; setNav('subjects');
+  const c=countGrade(g);
+  V.innerHTML=crumbs([C.home,C.subj,C.econ,C.mid,['الصف '+GRADE_NAME[g]]])+`<h2 class="view">الصف ${GRADE_NAME[g]}</h2><p class="lead">اختاري الكورس.</p>
+  <div class="grid">
+    <a class="card" href="#g${g}-t1"><h3>الكورس الأول</h3><p>${ar(c.all)} درسًا حسب توزيع المنهج، الجاهز منها ${ar(c.ready)}.</p><div class="meter" aria-hidden="true">${MIDDLE[g].t1.map(l=>`<i class="${l[3].length?'on':''}"></i>`).join('')}</div></a>
+    <div class="card off"><h3>الكورس الثاني</h3><p><span class="tag soon">قريبًا</span></p></div>
+  </div>`;
+}
+function viewTerm(g){
+  hero.hidden=true; setNav('subjects');
+  V.innerHTML=crumbs([C.home,C.subj,C.econ,C.mid,['الصف '+GRADE_NAME[g],'g'+g],['الكورس الأول']])+`<h2 class="view">الصف ${GRADE_NAME[g]} · الكورس الأول</h2><p class="lead">الدروس مرتبة حسب توزيع المنهج. اضغطي على الدرس عشان تشوفين نسخه.</p>
+  <div class="grid">${MIDDLE[g].t1.map(l=>`<a class="lesson${l[3].length?'':' soon'}" href="#l-${g}-${l[0]}"><span class="ic">${ICONS[l[2]]}</span><span><h3>${esc(l[1])}</h3>${versionsSummary(l[3])}</span></a>`).join('')}</div>`;
+}
+function piece(on,icon,label){return `<div class="piece${on?'':' no'}">${ICONS[icon]}${on?label:label+' قريبًا'}</div>`;}
+function priceLine(v){
+  if(isFull(v)) return '<div class="price">الباقة الكاملة <b>٧ د.ك</b> · مع النشاط التفاعلي <b>٩ د.ك</b><small class="pkg-hint">الباقة الكاملة = عرض وتحضير ومطبوعات: ورقة عمل وبطاقات سبورة</small></div>';
+  if(v.d&&v.p) return '<div class="price">عرض وتحضير <b>٥ د.ك</b></div>';
+  if(v.d) return '<div class="price">العرض <b>٤ د.ك</b></div>';
+  if(v.p) return '<div class="price">التحضير <b>١٫٥٠٠ د.ك</b></div>';
+  return '';
+}
+function viewLesson(g,id){
+  hero.hidden=true; setNav('subjects');
+  const l=MIDDLE[g]&&MIDDLE[g].t1.find(x=>x[0]===id); if(!l) return viewHome();
+  const [,title,icon,vs]=l; let body;
+  if(!vs.length){
+    body=`<div class="note">نسخ هذا الدرس قيد التجهيز. تقدرين تطلبينه الحين كطلب جديد، ونجهزه لج بالكامل.<div class="row" style="margin-top:12px"><button class="btn green" data-order="${esc(title)}|الاقتصاد المنزلي · الصف ${GRADE_NAME[g]}|طلب جديد">اطلبيه كطلب جديد</button></div></div>`;
+  } else {
+    body='<div class="versions">'+vs.map((v,i)=>`<article class="ver${isFull(v)?' complete':''}">
+        <header><h3>النسخة ${ar(i+1)}</h3>${isFull(v)?'<span class="tag full">باقة كاملة</span>':''}</header>
+        ${v.t?`<div class="vsub">${esc(v.t)}</div>`:''}
+        ${v.k?`<div class="shots">${[1,2,3].map(n=>`<button type="button" data-shot="img/pv/${v.k}-${n}.jpg" aria-label="تكبير المعاينة ${ar(n)}"><img src="img/pv/${v.k}-${n}.jpg" alt="معاينة ${ar(n)} من النسخة ${ar(i+1)}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div><div class="shotcap">معاينات من ملفات هذه النسخة. اضغطي على الصورة لتكبيرها.</div>`:''}
+        <div class="pieces">${piece(v.d,'deck','العرض')}${piece(v.p,'prep','التحضير')}${piece(v.r,'print','المطبوعات')}</div>
+        ${v.h&&v.h.length?`<div><div style="font-size:14px;color:var(--muted);margin-bottom:6px">من أنشطتها</div><div class="hl">${v.h.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+        ${priceLine(v)}
+        <div class="row"><button class="btn green" data-order="${esc(title)}|الاقتصاد المنزلي · الصف ${GRADE_NAME[g]}|النسخة ${ar(i+1)}">اطلبي هذه النسخة</button></div>
+      </article>`).join('')+'</div><p class="lead" style="margin-top:18px">النقص في أي نسخة نكمله لج عند الطلب. وكل نسخة لها أنشطتها الخاصة، فما تتكرر نفس النسخة لمعلمتين في نفس المدرسة.</p>';
+  }
+  V.innerHTML=crumbs([C.home,C.subj,C.econ,C.mid,['الصف '+GRADE_NAME[g],'g'+g],['الكورس الأول','g'+g+'-t1'],[title]])+`
+  <div class="lessonhead"><span class="ic">${ICONS[icon]}</span><div><h2 class="view">${esc(title)}</h2><div style="color:var(--muted)">الاقتصاد المنزلي · الصف ${GRADE_NAME[g]} · الكورس الأول</div></div></div>`+body;
+}
+
+function viewOther(id){
+  hero.hidden=true; setNav('subjects');
+  const S=OTHER[id]; if(!S) return viewSubjects();
+  const lessons=S.groups.map(g=>`<h3 class="sec-h" style="font-size:22px">${esc(g.name)}</h3><div class="grid">${g.lessons.map(l=>`<a class="lesson${l[2].length?'':' soon'}" href="#sl-${id}-${l[0]}"><span class="ic">${ICONS[id==='social'?'social':id==='science'?'science':'psych']}</span><span><h3>${esc(l[1])}</h3>${versionsSummary(l[2])}</span></a>`).join('')}</div>`).join('');
+  V.innerHTML=crumbs([C.home,C.subj,[S.name]])+`<h2 class="view">${esc(S.name)}</h2><p class="lead">${esc(S.where)}. ${esc(S.note)}</p>`+(lessons||'')+
+  `<div class="note" style="margin-top:18px">تبين درس مو موجود؟ <button class="btn pink" style="margin-inline-start:8px" data-order="درس جديد|${esc(S.name)} · ${esc(S.where)}|طلب جديد">اطلبيه كطلب جديد</button></div>`;
+}
+function viewOtherLesson(id,lid){
+  hero.hidden=true; setNav('subjects');
+  const S=OTHER[id]; if(!S) return viewSubjects();
+  let l=null; S.groups.forEach(g=>g.lessons.forEach(x=>{if(x[0]===lid)l=x})); if(!l) return viewOther(id);
+  const [,title,vs]=l, where=S.name+' · '+S.where; let body;
+  if(!vs.length) body=`<div class="note">هذا الدرس قيد التجهيز. تقدرين تطلبينه الحين كطلب جديد.<div class="row" style="margin-top:12px"><button class="btn green" data-order="${esc(title)}|${esc(where)}|طلب جديد">اطلبيه كطلب جديد</button></div></div>`;
+  else body='<div class="versions">'+vs.map((v,i)=>`<article class="ver${isFull(v)?' complete':''}"><header><h3>النسخة ${ar(i+1)}</h3>${isFull(v)?'<span class="tag full">باقة كاملة</span>':''}</header>
+    ${v.t?`<div class="vsub">${esc(v.t)}</div>`:''}
+    ${v.k?`<div class="shots">${[1,2,3].map(n=>`<button type="button" data-shot="img/pv/${v.k}-${n}.jpg" aria-label="تكبير المعاينة ${ar(n)}"><img src="img/pv/${v.k}-${n}.jpg" alt="معاينة ${ar(n)} من النسخة ${ar(i+1)}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div><div class="shotcap">معاينات من ملفات هذه النسخة. اضغطي على الصورة لتكبيرها.</div>`:''}
+    <div class="pieces">${piece(v.d,'deck','العرض')}${piece(v.p,'prep','التحضير')}${piece(v.r,'print','المطبوعات')}</div>
+    ${v.h&&v.h.length?`<div><div style="font-size:14px;color:var(--muted);margin-bottom:6px">من أنشطتها</div><div class="hl">${v.h.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+    <div class="row"><button class="btn green" data-order="${esc(title)}|${esc(where)}|النسخة ${ar(i+1)}">اطلبي هذه النسخة</button></div></article>`).join('')+'</div>';
+  V.innerHTML=crumbs([C.home,C.subj,[S.name,'s-'+id],[title]])+`<div class="lessonhead"><span class="ic">${ICONS[id==='social'?'social':id==='science'?'science':'psych']}</span><div><h2 class="view">${esc(title)}</h2><div style="color:var(--muted)">${esc(where)}</div></div></div>`+body;
+}
+const WORKSHOPS=[
+ ['الحصة خارج السيطرة!','٩٠ دقيقة للمعلمات','ست أنشطة صفية لإدارة الصف، عرض كينوت قابل للتعديل وحقيبة مطبوعات.'],
+ ['عرضكِ يحكي!','٦٠ دقيقة للمعلمات المبتدئات','تصميم عروض إبداعية بـ Canva وClaude: عرض كينوت ودليل مطبوع وبطاقات أوامر وورقة عمل.'],
+ ['الغذاء كالدواء','إنماء مهني ٣٠ دقيقة','عرض كينوت ونشاط ورقي للمعلمات.'],
+ ['برامج الإذاعة المدرسية','حسب المناسبة','برنامج إذاعي كامل بفقراته جاهز للتقديم.'],
+ ['تنمية مهنية: تثبيت الأزرار وغرز الأبليكاسيون','عرض Keynote باسم المعلمة','غلاف باسم المعلمة وشريحة العنوان وشريحة صور التنمية، بخيط واحد ينتقل بين الشرائح بحركة سحرية، وألوان العنابي والذهبي على قماش الكتان.','tanmia-1']
+];
+function viewWorkshops(){
+  hero.hidden=true; setNav('workshops');
+  V.innerHTML=crumbs([C.home,['الورش والإنماءات']])+`<div class="split"><img src="img/badge-workshops.png" alt=""><div><h2 class="view">الورش والإنماءات المهنية</h2><p class="lead">ورش جاهزة للمعلمات، وتقدرين تطلبين ورشة على موضوعج.</p></div></div>
+  <div class="grid">${WORKSHOPS.map(w=>`<div class="card"><span class="em">${ICONS.star}</span><h3>${w[0]}</h3><p><b>${w[1]}</b><br>${w[2]}</p>${w[3]?`<div class="shots">${[1,2,3].map(n=>`<button type="button" data-shot="img/pv/${w[3]}-${n}.jpg" aria-label="تكبير المعاينة ${ar(n)}"><img src="img/pv/${w[3]}-${n}.jpg" alt="معاينة ${ar(n)}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>`:''}<div class="row" style="margin-top:6px"><button class="btn line" style="padding:6px 14px;font-size:14px" data-order="${esc(w[0])}|الورش والإنماءات المهنية|طلب">اطلبيها</button></div></div>`).join('')}</div>
+  <div class="note" style="margin-top:18px">تبين ورشة على موضوع ثاني؟ <button class="btn pink" style="margin-inline-start:8px" data-order="ورشة جديدة|الموضوع: |طلب جديد">اطلبي ورشتج</button></div>`;
+}
+const CONTESTS=[
+ ['مسابقات مطبوعة','print','بطاقات وأوراق تحدي تطبعينها للفرق، تنفع لأي مادة.'],
+ ['مسابقات كعرض تقديمي','deck','مسابقة على الشاشة بنقاط وأصوات وحركة، تكتبين أسئلتج فيها.'],
+ ['مسابقات برابط تفاعلي','move','لعبة إلكترونية برابط تفتح على السبورة الذكية وتتنافس فيها الفرق.']
+];
+function viewContests(){
+  hero.hidden=true; setNav('contests');
+  V.innerHTML=crumbs([C.home,['المسابقات التعليمية']])+`<h2 class="view">المسابقات التعليمية</h2><p class="lead">مسابقات للحصة وللمناسبات والأسابيع المدرسية، بثلاث طرق.</p>
+  <div class="grid">${CONTESTS.map(c=>`<div class="card"><span class="em">${ICONS[c[1]]}</span><h3>${c[0]}</h3><p>${c[2]}</p><div class="row" style="margin-top:6px"><span class="tag soon">قريبًا</span><button class="btn line" style="padding:6px 14px;font-size:14px" data-order="${esc(c[0])}|المسابقات التعليمية|طلب">اطلبيها</button></div></div>`).join('')}</div>`;
+}
+function isReady(x){return Array.isArray(x)?x[2].length>0:!!(x&&x.v);}
+function viewSecondary(){
+  hero.hidden=true; setNav('subjects');
+  V.innerHTML=crumbs([C.home,C.subj,C.econ,['المرحلة الثانوية']])+`<h2 class="view">المرحلة الثانوية</h2><p class="lead">علوم الأسرة والمستهلك للحادي عشر والثاني عشر. نجهز لكل درس باقة جديدة: تحضير متجدد، وعرض جديد، ومطبوعات.</p>
+  <div class="stages">${SECONDARY.map(b=>`<a class="stage" href="#hs-${b.id}"><h3>${b.name}</h3><p>${ar(b.terms.reduce((a,t)=>a+t.lessons.length,0))} درسًا · ${ar(b.terms.reduce((a,t)=>a+t.lessons.filter(isReady).length,0))} جاهز</p><span class="go">ادخلي ←</span></a>`).join('')}</div>`;
+}
+function viewHsBook(bid){
+  const b=SECONDARY.find(x=>x.id===bid); if(!b) return viewSecondary();
+  if(b.terms.length===1) return viewHsTerm(bid,b.terms[0].id);
+  hero.hidden=true; setNav('subjects');
+  V.innerHTML=crumbs([C.home,C.subj,C.econ,C.sec,[b.name]])+`<h2 class="view">${b.name}</h2><p class="lead">اختاري الكورس.</p>
+  <div class="grid">${b.terms.map(t=>`<a class="card" href="#hs-${b.id}-${t.id}"><h3>${t.name}</h3><p>${ar(t.lessons.length)} درسًا · ${ar(t.lessons.filter(isReady).length)} جاهز</p></a>`).join('')}</div>`;
+}
+function viewHsTerm(bid,tid){
+  hero.hidden=true; setNav('subjects');
+  const b=SECONDARY.find(x=>x.id===bid), t=b&&b.terms.find(x=>x.id===tid); if(!t) return viewSecondary();
+  const cr=[C.home,C.subj,C.econ,C.sec]; if(b.terms.length>1){cr.push([b.name,'hs-'+b.id]);cr.push([t.name]);} else cr.push([b.name]);
+  if(t.rich){
+    V.innerHTML=crumbs(cr)+`<h2 class="view">${b.name}${b.terms.length>1?' · '+t.name:''}</h2><p class="lead">الدروس مرتبة حسب توزيع المنهج. اضغطي على الدرس عشان تشوفين نسخه ومعاينات ملفاته.</p>
+    <div class="grid">${t.lessons.map(l=>`<a class="lesson${l[2].length?'':' soon'}" href="#hl-${b.id}-${t.id}-${l[0]}"><span class="ic">${ICONS[b.icon]}</span><span><h3>${esc(l[1])}</h3>${versionsSummary(l[2])}</span></a>`).join('')}</div>`;
+    return;
+  }
+  V.innerHTML=crumbs(cr)+`<h2 class="view">${b.name}${b.terms.length>1?' · '+t.name:''}</h2>
+  <div class="note" style="margin-bottom:18px">${t.lessons.some(x=>x.v)?'الدروس المكتوب عليها جاهز فيها باقة كاملة: تحضير وعرض كينوت ومطبوعات ولعبة تفاعلية. والباقي تقدرين تطلبينه ونجهزه لج.':'الباقات الجديدة لهذا المقرر قيد التجهيز. تقدرين تطلبين أي درس الحين، ونجهزه لج.'}</div>
+  <div class="grid">${t.lessons.map(x=>{const n=typeof x==='string'?x:x.n,v=typeof x==='string'?0:x.v;return `<button class="lesson${v?'':' soon'}" data-order="${esc(n)}|علوم الأسرة والمستهلك · ${b.name}|${v?'باقة جاهزة':'طلب جديد'}"><span class="ic">${ICONS[b.icon]}</span><span><h3>${esc(n)}</h3><span class="tag ${v?'full':'ver'}">${v?'جاهز · '+verLabel(v):'اطلبيه'}</span></span></button>`}).join('')}</div>`;
+}
+function viewHsLesson(bid,tid,lid){
+  hero.hidden=true; setNav('subjects');
+  const b=SECONDARY.find(x=>x.id===bid), t=b&&b.terms.find(x=>x.id===tid), l=t&&t.rich&&t.lessons.find(x=>x[0]===lid); if(!l) return viewSecondary();
+  const [,title,vs]=l, where='علوم الأسرة والمستهلك · '+b.name+' · '+t.name; let body;
+  if(!vs.length){
+    body=`<div class="note">نسخ هذا الدرس قيد التجهيز. تقدرين تطلبينه الحين كطلب جديد، ونجهزه لج بالكامل.<div class="row" style="margin-top:12px"><button class="btn green" data-order="${esc(title)}|${esc(where)}|طلب جديد">اطلبيه كطلب جديد</button></div></div>`;
+  } else {
+    body='<div class="versions">'+vs.map((v,i)=>`<article class="ver${isFull(v)?' complete':''}">
+        <header><h3>النسخة ${ar(i+1)}</h3>${isFull(v)?'<span class="tag full">باقة كاملة</span>':''}</header>
+        ${v.k?`<div class="shots">${[1,2,3].map(n=>`<button type="button" data-shot="img/pv/${v.k}-${n}.jpg" aria-label="تكبير المعاينة ${ar(n)}"><img src="img/pv/${v.k}-${n}.jpg" alt="معاينة ${ar(n)} من النسخة ${ar(i+1)}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div><div class="shotcap">معاينات من ملفات هذه النسخة. اضغطي على الصورة لتكبيرها.</div>`:''}
+        <div class="pieces">${piece(v.d,'deck','العرض')}${piece(v.p,'prep','التحضير')}${piece(v.r,'print','المطبوعات')}</div>
+        ${v.h&&v.h.length?`<div><div style="font-size:14px;color:var(--muted);margin-bottom:6px">من أنشطتها</div><div class="hl">${v.h.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+        ${priceLine(v)}
+        <div class="row"><button class="btn green" data-order="${esc(title)}|${esc(where)}|النسخة ${ar(i+1)}">اطلبي هذه النسخة</button></div>
+      </article>`).join('')+'</div>';
+  }
+  V.innerHTML=crumbs([C.home,C.subj,C.econ,C.sec,[b.name,'hs-'+b.id],[t.name,'hs-'+b.id+'-'+t.id],[title]])+`
+  <div class="lessonhead"><span class="ic">${ICONS[b.icon]}</span><div><h2 class="view">${esc(title)}</h2><div style="color:var(--muted)">${esc(where)}</div></div></div>`+body;
+}
+function viewActivities(){
+  hero.hidden=true; setNav('activities');
+  V.innerHTML=crumbs([C.home,['الأنشطة الصفية']])+`<div class="split"><img src="img/badge-activities.png" alt=""><div><h2 class="view">الأنشطة الصفية</h2><p class="lead">أدوات ومطبوعات تنفع أي مادة وأي صف. تطبعينها مرة، وتستخدمينها مع كل درس.</p></div></div>
+  <h2 class="sec-h">شهادات وبطاقات التعزيز</h2>
+  ${certsCard()}
+  <h2 class="sec-h">حقيبة أبله موونا الصفية</h2>
+  <div class="grid">${KIT.map(k=>`<div class="card"><span class="em">${ICONS[k[1]]}</span><h3>${k[0]}</h3><p>${k[2]}</p><div class="row" style="margin-top:6px"><span class="tag soon">قريبًا</span></div></div>`).join('')}</div>
+  <h2 class="sec-h">مطبوعات وبطاقات لكل المواد</h2>
+  <div class="grid">${ACTIVITIES.map(a=>`<div class="card"><span class="em">${ICONS[a[1]]}</span><h3>${a[0]}</h3><p>${a[2]}</p><div class="row" style="margin-top:6px"><span class="tag soon">قريبًا</span><button class="btn line" style="padding:6px 14px;font-size:14px" data-order="${esc(a[0])}|أنشطة لكل المواد|طلب">اطلبيها</button></div></div>`).join('')}</div>`;
+}
+function genCard(){
+  const shots=[['gen-1','برطمانات المفاجآت'],['gen-2','بطاقة السؤال'],['gen-3','عجلة الحظ'],['gen-4','سباق التوليب']];
+  return `<article class="game gen"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>مولد الألعاب</h3>
+  <p style="margin:0">صفحة برابط خاص لج: تكتبين أسئلة درسج، وتطلع لج لعبة جاهزة للسبورة الذكية خلال دقيقة.</p>
+  <ul><li>ثلاث ألعاب من نفس الأسئلة: برطمانات المفاجآت، عجلة الحظ، سباق التوليب</li><li>من ٢ إلى ٤ فرق بأسمائها ونقاطها، وجوكر بنقطتين</li><li>أسئلة اختيار من متعدد أو أسئلة شفهية تحكمين فيها أنتِ</li><li>أصوات واحتفال وشاشة كاملة، وأسئلتج تنحفظ في جهازج</li><li>تشتغل على الآيباد والسبورة الذكية والكمبيوتر</li></ul>
+  <div class="price">رابط خاص لج يدوم · <b>٣ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="مولد الألعاب|الألعاب التعليمية|رابط خاص">اطلبي رابطج</button></div></div></article>`;
+}
+function classCard(){
+  const shots=[['class-1','الساعة الرملية'],['class-2','قرعة الأسماء'],['class-3','حديقة النقاط'],['class-4','مقياس الهدوء']];
+  return `<article class="game gen"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>لوحة الصف: أدوات إدارة الصف</h3>
+  <p style="margin:0">رابط خاص لج تفتحينه على السبورة الذكية، فيه خمس أدوات تمسك فيها حصتج من أول دقيقة لآخرها.</p>
+  <ul><li>صفوفج كلها في مكان واحد: لكل صف أسماؤه ونقاطه، وتبدلين بينها بضغطة</li><li>الساعة الرملية: حلقة وقت ورمل ينزل، عد تنازلي بآخر عشر ثواني، وجرس وشاشة كاملة لما يخلص الوقت</li><li>قرعة الأسماء: بكرة أسماء تدور مثل آلة الحظ، واسم الطالبة يطلع كبير مع احتفال، وما يتكرر الاسم حتى يمر الدور على الكل</li><li>حديقة النقاط: من فريقين إلى ستة بألوانها، +١ و+٢ و+٥ وتراجع، وزهرة كل فريق تكبر، وزر أعلني الفائز</li><li>مقياس الهدوء: مؤشر كبير بأربع مستويات من الصمت إلى نقاش الصف</li><li>صانعة المجموعات: حسب عدد المجموعات أو عدد الطالبات في كل مجموعة</li><li>ساعة وتاريخ، ملء الشاشة، اختصارات لوحة المفاتيح، وتشتغل على السبورة الذكية والآيباد والكمبيوتر</li></ul>
+  <div class="price">رابط خاص لج يدوم · <b>٢٫٥٠٠ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="لوحة الصف: أدوات إدارة الصف|أدوات المعلمة|رابط خاص">اطلبي رابطج</button></div></div></article>`;
+}
+function ndCard(){
+  const shots=[['nd-1','غلاف لعبة رحلة البوم'],['nd-2','خريطة المحطات والبوم يبحر'],['nd-3','سؤال محطة أبراج الكويت'],['nd-4','ورقة العمل: علمي يحكي حكاية']];
+  return `<article class="game gen"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>باقة العيد الوطني والتحرير</h3>
+  <p style="margin:0">لعبة «رحلة البوم»: سفينة كويتية تبحر بين ست محطات من معالم الكويت، وفي كل محطة سؤال ولؤلؤة للفريق الفائز.</p>
+  <ul><li>عرض Keynote بست محطات وحركة سحرية للبوم، وشرائح صح وخطأ بأصوات، والأسئلة تتعدل</li><li>ورقة عمل «علمي يحكي حكاية» مع نموذج الإجابة</li><li>ست بطاقات سبورة للمحطات، ولوحة اللؤلؤ لنقاط الفريقين</li><li>فقرة إذاعة مدرسية كاملة للعيد الوطني وعيد التحرير</li></ul>
+  <div class="price">الباقة كاملة · <b>٢٫٥٠٠ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="باقة العيد الوطني والتحرير|باقات المناسبات|الباقة كاملة">اطلبي الباقة</button></div></div></article>`;
+}
+function achvCard(){
+  const shots=[['achv-1','غلاف ملف الإنجاز'],['achv-2','صفحة البيانات الشخصية'],['achv-3','فاصل مطبوع: الزهرة'],['achv-4','فاصل مطبوع: الحديقة']];
+  return `<article class="game prod"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>ملف الإنجاز للمعلمة</h3>
+  <p style="margin:0">ملف إنجاز كامل بفكرة «رحلة نمو»: في كل قسم تكبر زهرة التوليب على الهامش، من البذرة إلى الحديقة في آخر الملف.</p>
+  <ul><li>ملف Keynote واحد بمقاس A4 فيه ٣٠ صفحة، كل النصوص تتعدل وأماكن جاهزة للصور</li><li>اثنا عشر قسمًا: البيانات، السيرة والمؤهلات، الرؤية والرسالة، الخبرات، الدورات، الشهادات، الخطط، الأنشطة، الزيارات، التواصل، الإنجازات، الصور</li><li>غلاف وفهرس وصفحة ختام وتوقيع</li><li>فاصل مرسوم قبل كل قسم، وملصقات كعب الملف في آخره</li><li>يتصدر PDF للإرسال أو الطباعة</li></ul>
+  <div class="feat"><span>يفتح في Keynote</span><span>ملف واحد</span><span>مقاس A4</span></div>
+  <div class="price">الملف كامل · <b>٢ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="ملف الإنجاز للمعلمة|أدوات المعلمة|الملف كامل">اطلبي ملفج</button></div></div></article>`;
+}
+function fanniCard(){
+  const shots=[['fanni-1','غلاف الاجتماع الفني'],['fanni-2','جدول الأعمال بالملفات'],['fanni-3','شريحة محور مع ورقة الملاحظات'],['fanni-4','شريحة توقيع الحضور']];
+  return `<article class="game gen"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>الاجتماع الفني</h3>
+  <p style="margin:0">عرض كامل للاجتماع الفني يتعدل: كل محور ملف، والملف ينفتح ويكبر معج من محور إلى محور.</p>
+  <ul><li>عرض Keynote في ١٣ شريحة بحركة سحرية، وكل النصوص تتعدل</li><li>ثمانية محاور جاهزة بنقاطها، وفي كل محور ورقة ملاحظات القسم تكتبين فيها وقت الاجتماع</li><li>جدول التوصيات والقرارات، وشريحة توقيع الحضور</li><li>تقدرين تكررين أي محور وتغيرين عنوانه، وتختارين موضوع اجتماعج: تعلم نشط، تقويم، أو أي موضوع</li><li>بخط بيروت الواضح، يشتغل على الآيباد</li></ul>
+  <div class="feat"><span>يفتح في Keynote</span><span>يتعدل بالكامل</span><span>للآيباد</span></div>
+  <div class="price">العرض كامل · <b>٣ د.ك</b> · بموضوع اجتماعج <b>٥ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="الاجتماع الفني|أدوات المعلمة|العرض كامل">اطلبي العرض</button><button class="btn line" data-order="الاجتماع الفني بموضوع مخصص|أدوات المعلمة|بموضوع اجتماعي">بموضوع اجتماعج</button></div></div></article>`;
+}
+function deptCard(){
+  const shots=[['dept-1','غلاف عرض اجتماع القسم'],['dept-2','جدول الأعمال على البوصلة'],['dept-3','نموذج الزيارة الصفية'],['dept-4','شريحة توزيع المهام']];
+  return `<article class="game gen"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>باقة رئيسة القسم</h3>
+  <p style="margin:0">«بوصلة القسم»: عرض لاجتماع القسم الشهري وعشرة نماذج مطبوعة، وكل بند في الاجتماع محطة على البوصلة والإبرة تدور معج من بند إلى بند.</p>
+  <ul><li>عرض Keynote لاجتماع القسم في ٢١ شريحة بحركة سحرية، وكل النصوص تتعدل</li><li>ثمانية بنود: الترحيب، إنجازات الشهر، نتائج الزيارات، الخطط العلاجية والإثرائية، التعاميم، توزيع المهام، الإنماء المهني، التوصيات، وشريحة معلمة الشهر</li><li>عشرة نماذج A4: الزيارة الصفية، تبادل الزيارات، الخطة العلاجية، الخطة الإثرائية، متابعة أعمال المعلمات، محضر الاجتماع، توزيع المهام واللجان، الإنماء المهني، التقرير الفصلي، الخطة السنوية</li><li>تطبعينها وتعبئينها بخط اليد أو على الآيباد</li></ul>
+  <div class="price">الباقة كاملة · <b>٣٫٥٠٠ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="باقة رئيسة القسم|أدوات المعلمة|الباقة كاملة">اطلبي الباقة</button></div></div></article>`;
+}
+function plannerCard(){
+  const shots=[['planner-1','غلاف دفتر المعلمة'],['planner-2','صفحة الأفعال السلوكية'],['planner-3','شهر ديسمبر بمواعيد الاختبارات'],['planner-4','صفحة شهاداتي ودوراتي']];
+  return `<article class="game prod"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>دفتر المعلمة الرقمي للآيباد</h3>
+  <p style="margin:0">دفتر متابعة المعلمة على طريقة مدارس الكويت، بغلاف جلد أخضر وشرائط قماش على جنبه: تضغطين على الشريط وتنتقلين للقسم.</p>
+  <ul><li>ملف Keynote فيه ٤٥ صفحة بالروابط، وغلاف يفتح بحركة سحرية، وفواصل للمادة والفصلين</li><li>صفحتا سمو الأمير وسمو ولي العهد، بياناتي، شهاداتي ودوراتي، وصفحات لصور الشهادات</li><li>الأهداف العامة للتربية في دولة الكويت ومحاورها، وطبيعة المرحلتين الابتدائية والمتوسطة وأهدافهما مكتوبة جاهزة</li><li>الهدف العام والأهداف الخاصة للمادة، الأفعال السلوكية، استراتيجيات التعلم النشط وأنشطة صفية متنوعة</li><li>رزنامة وزارة التربية ٢٠٢٦ / ٢٠٢٧ على أيامها من سبتمبر إلى يونيو، وجدول الحصص والمناوبة وحصص الاحتياط</li><li>توزيع المنهج لكل فصل، كشف الأسماء، الحالات الخاصة والصحية، توزيع الدرجات ورصدها، متابعة الطالبات</li><li>سجل الزيارات، اجتماعات القسم واللجان، الإنماء المهني، المهام والملاحظات</li><li>تكتبين فيه على الآيباد مباشرة، أو تصدّرينه PDF وتكتبين بالقلم</li></ul>
+  <div class="feat"><span>يفتح في Keynote</span><span>صفحات تتعدل</span><span>للآيباد</span></div>
+  <div class="price">الدفتر الرقمي · <b>٢ د.ك</b> · مع دفتر الطباعة <b>٣ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="دفتر المعلمة الرقمي للآيباد|أدوات المعلمة|الدفتر الرقمي">اطلبي الرقمي</button><button class="btn line" data-order="دفتر المعلمة الرقمي ودفتر الطباعة|أدوات المعلمة|الاثنين مع بعض">الاثنين مع بعض</button></div></div></article>`;
+}
+function printPlannerCard(){
+  const shots=[['printplanner-1','صفحة طريقة الاستخدام'],['printplanner-2','فاصل المادة'],['printplanner-3','الأفعال السلوكية'],['printplanner-4','توزيع المنهج للفصل الأول']];
+  return `<article class="game prod"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>دفتر المعلمة للطباعة</h3>
+  <p style="margin:0">صفحات دفتر المتابعة جاهزة على ورق A4، تطبعينها وتحطينها في ملفج أو سجل التحضير.</p>
+  <ul><li>٢٩ صفحة A4 بنفس هوية الدفتر الرقمي، وأول صفحة طريقة الاستخدام</li><li>صفحتا سمو الأمير وسمو ولي العهد، والأهداف العامة للتربية وطبيعة المرحلتين الابتدائية والمتوسطة مكتوبة جاهزة</li><li>بياناتي، شهاداتي ودوراتي، وصفحة تلصقين فيها صور الشهادات</li><li>فاصل المادة، الهدف العام والأهداف الخاصة، الأفعال السلوكية، الاستراتيجيات والأنشطة</li><li>جدول الحصص، وفاصل وتوزيع منهج لكل فصل</li><li>كشف الأسماء، الحالات الخاصة، توزيع الدرجات ورصدها، المتابعة، الزيارات، القسم والإنماء، المهام، تقويم شهري</li></ul>
+  <div class="feat"><span>يفتح في Pages أو Word</span><span>طباعة A4</span></div>
+  <div class="price">دفتر الطباعة · <b>١٫٥٠٠ د.ك</b> · مع الدفتر الرقمي <b>٣ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="دفتر المعلمة للطباعة|أدوات المعلمة|دفتر الطباعة">اطلبي دفتر الطباعة</button><button class="btn line" data-order="دفتر المعلمة الرقمي ودفتر الطباعة|أدوات المعلمة|الاثنين مع بعض">الاثنين مع بعض</button></div></div></article>`;
+}
+function viewTools(){
+  hero.hidden=true; setNav('tools');
+  V.innerHTML=crumbs([C.home,['أدوات المعلمة']])+`<div class="split"><img src="img/badge-tools.png" alt=""><div><h2 class="view">أدوات المعلمة</h2><p class="lead">ملفات جاهزة لشغلج الإداري والمهني، بتصميم أنيق وتتعدل بسهولة.</p></div></div>
+  ${classCard()}
+  <h2 class="sec-h">دفتر المعلمة الرقمي للآيباد</h2>
+  ${plannerCard()}
+  <h2 class="sec-h">دفتر المعلمة للطباعة</h2>
+  ${printPlannerCard()}
+  <h2 class="sec-h">الاجتماع الفني</h2>
+  ${fanniCard()}
+  <h2 class="sec-h">باقة رئيسة القسم</h2>
+  ${deptCard()}
+  <h2 class="sec-h">ملف الإنجاز للمعلمة</h2>
+  ${achvCard()}
+  <h2 class="sec-h">شهادات وبطاقات التعزيز</h2>
+  ${certsCard()}`;
+}
+function passportCard(){
+  const shots=[['passport-1','خريطة الرحلة'],['passport-2','بطاقة ختم خاص'],['passport-3','جواز المجموعة المطبوع']];
+  return `<article class="game gen"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>جواز سفر المعرفة</h3>
+  <p style="margin:0">استراتيجية رحلة: كل مجموعة عندها جواز، وكل إجابة صحيحة ختم جديد، وأختام خاصة تقلب اللعبة.</p>
+  <ul><li>عرض Keynote بخريطة رحلة من ثماني محطات، تكتبين فيها أسئلة أي درس</li><li>شريحة تم الختم وشريحة التأشيرة معلّقة بأصوات ختم حقيقية</li><li>ستة أختام خاصة: تأشيرة سريعة، حجر صحي، ترانزيت، درجة رجال الأعمال، تفتيش جمركي، حقيبة ضايعة</li><li>مطبوعات A4: جواز لكل مجموعة، وبطاقات الأختام، وصفحة طريقة الاستخدام</li></ul>
+  <div class="price">العرض والمطبوعات · <b>٢ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="جواز سفر المعرفة|الألعاب التعليمية|طلب">اطلبيها</button></div></div></article>`;
+}
+function certsCard(){
+  const shots=[['certs-1','شهادة على السبورة بعد حفل التكريم'],['certs-2','الظرف ينفتح والختم يسقط'],['certs-3','شهادة تميّز للطباعة'],['certs-4','بطاقات الامتياز']];
+  return `<article class="game gen"><div class="shots">${shots.map(s=>`<button type="button" data-shot="img/pv/${s[0]}.jpg" aria-label="تكبير معاينة ${s[1]}"><img src="img/pv/${s[0]}.jpg" alt="معاينة ${s[1]}" loading="lazy" draggable="false" oncontextmenu="return false"></button>`).join('')}</div>
+  <div class="in"><div class="row"><span class="tag full">جديد</span><span class="tag soft">لكل المواد والمراحل</span></div>
+  <h3>شهادات وبطاقات التعزيز</h3>
+  <p style="margin:0">بفكرة «ختم الشمع الذهبي»: ظرف أخضر مختوم بالشمع ينفتح على السبورة، وتطلع منه الشهادة وينطبع الختم عليها قدام الصف كله.</p>
+  <ul><li>عرض Keynote فيه حفل تكريم بحركة سحرية وأصوات: الظرف ينفتح، الشهادة تكبر، والختم ينطبع</li><li>ست شهادات تتعدل: تميّز، شكر وتقدير، الإبداع، المثابرة، الخُلق الرفيع، تألّق الشهر، تكتبين الاسم وتصدّرينها صورة أو PDF</li><li>اثنا عشر ملصق تعزيز للآيباد تنسخينها على واجبات الطالبات الرقمية</li><li>مطبوعات A4: الشهادات الست، و١٢ بطاقة امتياز، وبطاقة جمع الأختام، ورسائل فخر لولي الأمر</li></ul>
+  <div class="price">العرض والمطبوعات · <b>٢ د.ك</b></div>
+  <div class="row"><button class="btn green" data-order="شهادات وبطاقات التعزيز|أدوات المعلمة|العرض والمطبوعات">اطلبيها</button></div></div></article>`;
+}
+function gameCard(){
+  return `<article class="game"><img src="img/game-jar.jpg" alt="غلاف لعبة افتحي البرطمان">
+  <div class="in"><div class="row"><span class="tag free">هدية مجانية</span><span class="tag ver">لكل المواد</span></div>
+  <h3>افتحي البرطمان</h3>
+  <ul><li>تسعة برطمانات على الرف، ولكل برطمان سؤال</li><li>ثلاث خيارات، وشريحة صح وشريحة خطأ بأصوات</li><li>البرطمان الذهبي جوكر بنقطتين</li><li>عرض Keynote تكتبين فيه أسئلتج من أي درس</li></ul>
+  <div class="row"><button class="btn green" data-order="لعبة افتحي البرطمان|الألعاب التعليمية|هدية مجانية">اطلبيها</button></div></div></article>`;
+}
+function viewGames(){
+  hero.hidden=true; setNav('games');
+  V.innerHTML=crumbs([C.home,['الألعاب والمسابقات']])+`<div class="split"><img src="img/badge-games.png" alt=""><div><h2 class="view">الألعاب والمسابقات</h2><p class="lead">ألعاب للحصة تكتبين فيها أسئلتج من أي مادة، ومسابقات للمناسبات والأسابيع المدرسية.</p></div></div>
+  <h2 class="sec-h">باقات المناسبات</h2>
+  ${ndCard()}
+  <h2 class="sec-h">ألعاب الحصة</h2>
+  ${genCard()}
+  <div style="height:18px"></div>${passportCard()}
+  <h2 class="sec-h">هدية مجانية</h2>
+  ${gameCard()}
+  <h2 class="sec-h">المسابقات التعليمية</h2>
+  <div class="grid">${CONTESTS.map(c=>`<div class="card"><span class="em">${ICONS[c[1]]}</span><h3>${c[0]}</h3><p>${c[2]}</p><div class="row" style="margin-top:6px"><span class="tag soon">قريبًا</span><button class="btn line" style="padding:6px 14px;font-size:14px" data-order="${esc(c[0])}|المسابقات التعليمية|طلب">اطلبيها</button></div></div>`).join('')}</div>`;
+}
+function viewPrices(){
+  hero.hidden=true; setNav('prices');
+  V.innerHTML=crumbs([C.home,['الأسعار']])+`<h2 class="view">الأسعار</h2><p class="lead">الدرس الجاهز يُسلَّم كما هو. الطلب الجديد يُجهَّز من الصفر وله تعديل واحد مجاني.</p>
+  <div class="pkg"><h3>شنو يعني الباقة الكاملة؟</h3><p>الدرس كامل جاهز للحصة، كل شي فيه بنفس الثيم والألوان:</p>
+  <div class="pkg-items"><div><b>١</b><span>عرض Keynote</span><small>بحركات سحرية وأنشطة وتقويم</small></div><div><b>٢</b><span>التحضير</span><small>مطابق للدليل وجاهز للتسليم</small></div><div><b>٣</b><span>المطبوعات</span><small>ورقة عمل ونموذج إجابتها، وبطاقات سبورة للأنشطة</small></div></div>
+  <p class="pkg-note">المطبوعات يعني الأوراق اللي تطبعينها للحصة: ورقة عمل للطالبات، ونموذج الإجابة لج، وبطاقات كبيرة تلصقينها على السبورة. والنشاط التفاعلي إضافة اختيارية بسعر الباقة مع النشاط التفاعلي.</p></div>
+  <div class="prices">
+    <div class="pcard"><h3>درس جاهز</h3><table><tr><td>تحضير</td><td>١٫٥٠٠ د.ك</td></tr><tr><td>عرض تقديمي</td><td>٤ د.ك</td></tr><tr><td>عرض وتحضير</td><td>٥ د.ك</td></tr><tr class="star"><td>الباقة الكاملة</td><td>٧ د.ك</td></tr><tr class="star"><td>الباقة مع النشاط التفاعلي</td><td>٩ د.ك</td></tr></table></div>
+    <div class="pcard"><h3>طلب جديد</h3><table><tr><td>تحضير</td><td>٢ د.ك</td></tr><tr><td>عرض تقديمي</td><td>٧ د.ك</td></tr><tr><td>عرض وتحضير</td><td>٨ د.ك</td></tr><tr class="star"><td>الباقة الكاملة</td><td>١٠ د.ك</td></tr><tr class="star"><td>الباقة مع النشاط التفاعلي</td><td>١٢ د.ك</td></tr></table></div>
+  </div>
+  <div class="stamp"><h3>بطاقة أبله موونا</h3>
+    <p>ختم لكل طلب، وختم لكل معلمة تجيبينها وتطلب. ٥ أختام = خصم ٥٠٪ على طلبج الجاي، و١٠ أختام = عرض جاهز هدية. والمعلمة اللي تجيبينها تاخذ ١٠٪ خصم على أول طلب.</p>
+    <div class="dots" aria-hidden="true"><i class="f">١</i><i class="f">٢</i><i>٣</i><i>٤</i><i>٥٠٪</i><i>٦</i><i>٧</i><i>٨</i><i>٩</i><i>هدية</i></div>
+  </div>
+`;
+}
+function viewHow(){
+  hero.hidden=true; setNav('how');
+  V.innerHTML=crumbs([C.home,['طريقة الطلب']])+`<div class="split"><img src="img/icon-order.png" alt=""><div><h2 class="view">طريقة الطلب</h2><p class="lead">الطلب كله عبر الواتساب، بخطوات بسيطة.</p></div></div>
+  <div class="steps">
+    <div class="step"><div><h3>اختاري</h3><p>ادخلي المادة ثم الصف ثم الدرس، واختاري النسخة اللي تعجبج.</p></div></div>
+    <div class="step"><div><h3>اضغطي اطلبي</h3><p>تطلع لج رسالة جاهزة فيها اسم الدرس ورقم النسخة. اكتبي اسم مدرستج فيها.</p></div></div>
+    <div class="step"><div><h3>أرسلي على الواتساب</h3><p>اضغطي إرسال على الواتساب، ونرد عليج ونأكد طلبج.</p></div></div>
+    <div class="step"><div><h3>استلمي ملفاتج</h3><p>بعد الدفع توصلج الملفات، وتفتح في Keynote وPowerPoint، والتحضير في Pages وWord.</p></div></div>
+  </div>
+  <div class="row" style="margin-top:16px"><a class="btn green" href="https://wa.me/96555438624" target="_blank" rel="noopener">راسلينا على الواتساب</a><span dir="ltr" style="font-weight:800">+965 5543 8624</span></div>`;
+}
+function viewAbout(){
+  hero.hidden=true; setNav('');
+  V.innerHTML=crumbs([C.home,['من أنا']])+`<div class="split"><img src="img/icon-about.png" alt=""><div class="prose">
+  <h2 class="view" style="margin-bottom:8px">أنا أبله موونا</h2>
+  <p>معلمة اقتصاد منزلي، أصمم للمعلمات عروض Keynote تفاعلية، وتحاضير مرتبة، ومطبوعات وأنشطة، وألعاب تعليمية.</p>
+  <p>كل درس عندي له أكثر من نسخة، وكل نسخة بأنشطة مختلفة، عشان تكون حصتج ممتعة وجاهزة، وما تتشابه مع زميلتج في نفس المدرسة.</p>
+  <p>تابعيني على الانستقرام <a dir="ltr" href="https://instagram.com/abla.moona" target="_blank" rel="noopener">@abla.moona</a></p></div></div>`;
+}
+function viewTerms(){
+  hero.hidden=true; setNav('');
+  V.innerHTML=crumbs([C.home,['الشروط']])+`<div class="split"><img src="img/icon-terms.png" alt=""><div class="prose">
+  <h2 class="view" style="margin-bottom:8px">الشروط</h2>
+  <ul>
+    <li>الدرس الجاهز يُسلَّم كما هو بدون تعديل مجاني.</li>
+    <li>الطلب الجديد والباقات لها تعديل واحد مجاني.</li>
+    <li>نسألج عن اسم المدرسة عشان ما تتكرر نفس النسخة لمعلمتين في نفس المدرسة.</li>
+    <li>التحاضير بدون اسم أو شعار أبله موونا، فتقدمينها باسمج.</li>
+    <li>النشاط التفاعلي إضافة اختيارية، والدرس كامل بدونه.</li>
+    <li>العروض تفتح في Keynote وPowerPoint، والتحاضير في Pages وWord.</li>
+  </ul></div></div>`;
+}
+
+const KIT=[
+ ['المربع الذكي','poster','قالب أربعة مربعات للأرض أو السبورة، للتصنيف بمعيارين في أي مادة'],
+ ['حبل الغسيل','cards','بطاقات بمشبك مرسوم لترتيب الخطوات والأحداث، مع بطاقة دخيلة'],
+ ['نقود السوق','print','نقود وبطاقات أسعار للعب الشراء والمزاد والنقاط'],
+ ['سلّم الاختيارات','board','لوح لعب مطبوع تكتب فيه المعلمة مواقف درسها'],
+ ['بطاقات الدومينو البشري','move','بطاقات كبيرة لسلاسل السبب والنتيجة'],
+ ['بطاقات التنبيه والأدلة','star','بطاقات يرفعها الطالبات لاكتشاف الخطأ ودعم الرأي']
+];
+function viewKit(){
+  hero.hidden=true; setNav('kit');
+  V.innerHTML=crumbs([C.home,['حقيبة أبله موونا الصفية']])+`<div class="split"><img src="img/icon-sheets.png" alt="" style="filter:hue-rotate(140deg)"><div><h2 class="view">حقيبة أبله موونا الصفية</h2><p class="lead">أدوات ألعاب مطبوعة تنفع كل المواد وكل الصفوف. تطبعينها مرة، وتكتبين عليها محتوى درسك كل مرة.</p></div></div>
+  <div class="grid">${KIT.map(k=>`<div class="card"><span class="em">${ICONS[k[1]]}</span><h3>${k[0]}</h3><p>${k[2]}</p><div class="row" style="margin-top:6px"><span class="tag soon">قريبًا</span></div></div>`).join('')}</div>
+  <div class="note" style="margin-top:18px">تبين تعرفين أول ما تنزل الحقيبة؟ <button class="btn pink" style="margin-inline-start:8px" data-order="حقيبة أبله موونا الصفية|لكل المواد|أبي أعرف أول ما تنزل">بلّغيني</button></div>`;
+}
+function route(){
+  const h=(location.hash||'#home').slice(1); let m;
+  if(h==='subjects') viewSubjects();
+  else if(h==='econ') viewEcon();
+  else if(h==='middle') viewMiddle();
+  else if(h==='secondary') viewSecondary();
+  else if(h==='activities') viewActivities();
+  else if(h==='games') viewGames();
+  else if(h==='kit') viewActivities();
+  else if(h==='tools') viewTools();
+  else if(h==='workshops') viewWorkshops();
+  else if(h==='contests') viewGames();
+  else if((m=h.match(/^s-([a-z]+)$/))) viewOther(m[1]);
+  else if((m=h.match(/^sl-([a-z]+)-([a-z]+)$/))) viewOtherLesson(m[1],m[2]);
+  else if(h==='prices') viewPrices();
+  else if(h==='how') viewHow();
+  else if(h==='about') viewAbout();
+  else if(h==='terms') viewTerms();
+  else if((m=h.match(/^g([6-9])$/))) viewGrade(+m[1]);
+  else if((m=h.match(/^g([6-9])-t1$/))) viewTerm(+m[1]);
+  else if((m=h.match(/^l-([6-9])-([a-z]+)$/))) viewLesson(+m[1],m[2]);
+  else if((m=h.match(/^hl-([a-z]+)-([a-z0-9]+)-([a-z0-9]+)$/))) viewHsLesson(m[1],m[2],m[3]);
+  else if((m=h.match(/^hs-([a-z]+)-([a-z0-9]+)$/))) viewHsTerm(m[1],m[2]);
+  else if((m=h.match(/^hs-([a-z]+)$/))) viewHsBook(m[1]);
+  else viewHome();
+  closeOrder();
+  if(location.hash) window.scrollTo({top:0});
+}
+window.addEventListener('hashchange',route);
+
+const order=document.getElementById('order'),ta=document.getElementById('orderText'),copied=document.getElementById('copied'),wa=document.getElementById('waLink');
+function syncWa(){wa.href='https://wa.me/96555438624?text='+encodeURIComponent(ta.value)}
+ta.addEventListener('input',syncWa);
+function openOrder(spec){
+  const [item,where,ver]=spec.split('|');
+  ta.value=`مرحبا أبله موونا 🌷\nأبي أطلب:\n${item}\n${where}\n${ver}\nالمطلوب: \nاسم المدرسة: `;
+  syncWa(); order.hidden=false; copied.hidden=true; ta.focus(); ta.setSelectionRange(ta.value.length,ta.value.length);
+}
+function closeOrder(){order.hidden=true}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-order]');if(b){e.preventDefault();openOrder(b.getAttribute('data-order'))}});
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-shot]');if(b){lbi.src=b.getAttribute('data-shot');lb.hidden=false}else if(e.target.closest('#lb')){lb.hidden=true}});
+lbi.addEventListener('contextmenu',e=>e.preventDefault());
+document.getElementById('closeOrder').addEventListener('click',closeOrder);
+document.getElementById('copyOrder').addEventListener('click',()=>{const done=()=>{copied.hidden=false};try{navigator.clipboard.writeText(ta.value).then(done,()=>{ta.select();done()})}catch(_){ta.select();done()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeOrder();lb.hidden=true}});
+route();
+</script>
+
+
+</body></html>
