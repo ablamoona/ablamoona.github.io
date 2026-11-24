@@ -1,0 +1,104 @@
+<!DOCTYPE html><html dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:P;font-weight:300;src:url(ibm-plex-sans-arabic-arabic-300-normal.woff2)}
+@font-face{font-family:P;font-weight:400;src:url(ibm-plex-sans-arabic-arabic-400-normal.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(ibm-plex-sans-arabic-arabic-600-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(ibm-plex-sans-arabic-arabic-700-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:P;background:#999}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F7E9DF;color:#1f2f27;margin-bottom:20px}
+.brand{position:absolute;z-index:5;top:46px;right:56px;display:flex;align-items:center;gap:12px;font-size:26px;font-weight:600;color:#244735}
+.brand img{width:56px;height:56px;border-radius:50%}
+.pg{position:absolute;z-index:5;left:56px;top:60px;font-size:24px;color:#a08f80;font-weight:600;direction:ltr}
+
+/* COVER */
+.cov .img{position:absolute;left:0;bottom:0;width:1080px}
+.cov .fade{position:absolute;left:0;right:0;top:0;height:420px;background:linear-gradient(#F5DACC 55%,rgba(245,218,204,0));z-index:2}
+.cov .bgtop{position:absolute;inset:0 0 auto 0;height:300px;background:#F5DACC}
+.hook{position:absolute;z-index:4;top:130px;right:60px;left:60px}
+.hook .q{font-size:104px;font-weight:700;color:#244735;line-height:1.15}
+.hook .q em{font-style:normal;color:#C6A15B}
+.hook .a{font-size:38px;font-weight:600;color:#3d4d45;margin-top:14px}
+.swipe{position:absolute;z-index:4;left:44px;bottom:44px;background:#244735;color:#F3ECE1;font-size:32px;font-weight:600;padding:20px 34px;border-radius:50px;box-shadow:0 16px 40px rgba(36,71,53,.35)}
+
+/* CARD */
+.card{position:absolute;left:70px;top:130px;width:940px;height:1170px;background:#FFFDF9;border-radius:46px;box-shadow:0 40px 90px rgba(70,40,30,.18);padding:22px}
+.card::before{content:"";position:absolute;inset:12px;border:2.5px solid #C6A15B;border-radius:36px;pointer-events:none}
+.hd{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 0}
+.tag{background:#244735;color:#F3ECE1;font-weight:700;font-size:26px;padding:8px 22px;border-radius:30px}
+.ttl{font-size:68px;font-weight:700;color:#244735}
+.ph{position:relative;margin:14px 18px 0;border-radius:28px;overflow:hidden;height:745px}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:center 72%}
+.meters{display:flex;gap:12px;margin:14px 26px 0}
+.m{background:#F7EEE6;border-radius:22px;padding:8px 16px;font-size:24px;font-weight:600;color:#244735;display:flex;align-items:center;gap:8px;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.m i{font-style:normal;letter-spacing:2px}
+.m i b{font-weight:400;opacity:.22}
+.ex{position:absolute;right:18px;bottom:18px;max-width:78%;background:#244735;color:#F3ECE1;border-radius:22px;padding:12px 22px;font-size:26px;line-height:1.5}
+.ex b{color:#E3C68A}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 22px 0}
+.st{background:#F7EEE6;border-radius:26px;padding:22px 18px 20px;position:relative;text-align:center}
+.st .n{width:56px;height:56px;border-radius:50%;background:#C6A15B;color:#fff;font-weight:700;font-size:28px;display:flex;align-items:center;justify-content:center;margin:-46px auto 10px;box-shadow:0 8px 18px rgba(198,161,91,.4)}
+.st p{font-size:29px;line-height:1.45;font-weight:600;color:#2b3a33}
+.st:not(:last-child)::after{content:"←";position:absolute;left:-17px;top:50%;transform:translateY(-50%);color:#C6A15B;font-size:26px;font-weight:700;z-index:2}
+
+/* END */
+.end .q{position:absolute;top:150px;width:100%;text-align:center;font-size:90px;font-weight:700;color:#244735;line-height:1.25}
+.end .q em{font-style:normal;color:#C6A15B}
+.fan{position:absolute;left:0;right:0;top:470px;height:520px}
+.fan .c{position:absolute;width:250px;height:330px;background:#FFFDF9;border-radius:24px;padding:10px;box-shadow:0 24px 50px rgba(70,40,30,.2);top:80px}
+.fan .c::before{content:"";position:absolute;inset:5px;border:2px solid #C6A15B;border-radius:19px}
+.fan .c img{width:100%;height:240px;object-fit:cover;border-radius:16px;object-position:center 70%}
+.fan .c b{display:block;text-align:center;font-size:44px;color:#C6A15B;margin-top:4px}
+.end .p{position:absolute;top:1010px;width:100%;text-align:center;font-size:42px;color:#3d4d45;font-weight:600;line-height:1.6}
+.end .h{position:absolute;bottom:60px;width:100%;display:flex;justify-content:center;align-items:center;gap:16px;font-size:38px;font-weight:700;color:#244735;direction:ltr}
+.end .h img{width:80px;height:80px;border-radius:50%}
+</style></head><body>
+
+<!-- 1 cover -->
+<div class="s cov">
+ <div class="bgtop"></div><img class="img" src="u1.jpg"><div class="fade"></div>
+ <div class="brand"><img src="logo.png">أبله موونا</div><div class="pg">1/7</div>
+ <div class="hook"><div class="q">طالباتج نايمات<br>بالحصة؟ <em>😴</em></div><div class="a">عندج ٥ بطاقات طاقة تصحّيهن بدقيقتين</div></div>
+ <div class="swipe">اسحبي واختاري بطاقتج ←</div>
+</div>
+
+<!-- template cards -->
+<div id="cards"></div>
+
+<!-- 7 end -->
+<div class="s end">
+ <div class="brand"><img src="logo.png">أبله موونا</div><div class="pg">7/7</div>
+ <div class="q">أي بطاقة<br>بتلعبين فيها <em>أول؟</em></div>
+ <div class="fan">
+  <div class="c" style="left:750px;transform:rotate(14deg);top:120px;z-index:1"><img src="u2.jpg"><b>١</b></div>
+  <div class="c" style="left:580px;transform:rotate(7deg);top:90px;z-index:2"><img src="u3.jpg"><b>٢</b></div>
+  <div class="c" style="left:415px;transform:rotate(0deg);top:80px;z-index:3"><img src="u4.jpg"><b>٣</b></div>
+  <div class="c" style="left:250px;transform:rotate(-7deg);top:90px;z-index:2"><img src="u5.jpg"><b>٤</b></div>
+  <div class="c" style="left:80px;transform:rotate(-14deg);top:120px;z-index:1"><img src="u6.jpg"><b>٥</b></div>
+ </div>
+ <div class="p">اكتبي رقمها بالتعليقات 👇<br>واحفظي البوست لحصتج الجاية 🔖</div>
+ <div class="h"><img src="logo.png">@abla.moona</div>
+</div>
+
+<script>
+const C=[
+ {t:"التمثال المفهومي",img:"u2.jpg",e:3,z:1,m:"٢",s:["صفّقي والطالبات يمشين بين الطاولات","وقّفي وقولي مفهومًا من الدرس","يتجمّدن بوضعية تعبّر عنه"],x:"«الادخار» = حصالة وهمية 🪙"},
+ {t:"خط الرأي",img:"u3.jpg",e:2,z:2,m:"٤",s:["شريط على الأرض: ✓ بطرف و✗ بطرف","اقرئي عبارة من الدرس","كل طالبة توقف عند رأيها وتبرّره"],x:"«الشراء أونلاين دايمًا أوفر»"},
+ {t:"الطابور الصامت",img:"u4.jpg",e:2,z:1,m:"١",s:["وزّعي خطوات على ٥ طالبات","يترتّبن بطابور بدون ولا كلمة","٣٠ ثانية، والصف يحكم!"],x:"خطوات غسل الصحون 🍽️"},
+ {t:"تبديل الكراسي",img:"u5.jpg",e:3,z:3,m:"٣",s:["كل طالبة تاخذ كلمة من الدرس","اقرئي تعريف الكلمة","صاحبتها تبدّل مكانها بسرعة"],x:"«نوقف فيه النزيف» = الضمادة"},
+ {t:"زوايا الصف الأربع",img:"u6.jpg",e:2,z:2,m:"٣",s:["كل زاوية بالصف لها لون","اعرضي سؤالًا بأربع خيارات","تمشي لزاوية إجابتها"],x:"«أي ألياف مصدرها نباتي؟»"}
+];
+const ar=n=>"١٢٣٤٥٦٧"[n-1];
+const bars=(n,ch)=>ch.repeat(n)+'<b>'+ch.repeat(3-n)+'</b>';
+document.getElementById('cards').innerHTML=C.map((c,i)=>`
+<div class="s">
+ <div class="brand"><img src="logo.png">أبله موونا</div><div class="pg">${i+2}/7</div>
+ <div class="card">
+  <div class="hd"><div class="ttl">${c.t}</div><div class="tag">بطاقة ${ar(i+1)}</div></div>
+  <div class="meters"><div class="m">طاقة <i>${bars(c.e,'⚡')}</i></div><div class="m">إزعاج <i>${bars(c.z,'🔊')}</i></div><div class="m">⏱ ${c.m} د</div></div>
+  <div class="ph"><img src="${c.img}">
+   <div class="ex"><b>مثال:</b> ${c.x}</div></div>
+  <div class="steps">${c.s.map((s,k)=>`<div class="st"><div class="n">${ar(k+1)}</div><p>${s}</p></div>`).join('')}</div>
+ </div>
+</div>`).join('');
+</script>
+</body></html>
