@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>أعمال أبله موونا — مواقع ومنيوهات وريلز</title>
+<meta name="description" content="نماذج من أعمال أبله موونا: منيو إلكتروني للكافيهات، ريلز ترويجية، ومواقع تفاعلية.">
+<style>
+@font-face{font-family:Plex;font-weight:300;src:url(../cafe/fonts/ibm-plex-sans-arabic-arabic-300-normal.woff2)}
+@font-face{font-family:Plex;font-weight:400;src:url(../cafe/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2)}
+@font-face{font-family:Plex;font-weight:600;src:url(../cafe/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2)}
+@font-face{font-family:Kufi;font-weight:700;src:url(../cafe/fonts/reem-kufi-arabic-700-normal.woff2)}
+:root{--ink:#0B231A;--green:#244735;--gold:#C9A562;--cream:#F3ECE1;--paper:#FAF6EF;--mut:#6b7a72}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Plex,system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+/* hero */
+.hero{background:var(--ink);color:var(--cream);border-radius:0 0 48px 48px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:700px;height:700px;left:-260px;top:-300px;border-radius:50%;background:radial-gradient(closest-side,rgba(127,184,168,.35),transparent)}
+.hero::after{content:"";position:absolute;width:600px;height:600px;right:-220px;bottom:-320px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,165,98,.28),transparent)}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600}
+.brand img{width:42px;height:42px;border-radius:50%}
+.bar a.back{font-size:14px;opacity:.8;text-decoration:none;border:1px solid rgba(243,236,225,.3);padding:8px 16px;border-radius:30px}
+.hc{position:relative;z-index:2;padding:70px 0 90px;max-width:720px}
+.kick{color:var(--gold);font-weight:600;font-size:15px;letter-spacing:.5px}
+h1{font-family:Kufi;font-weight:700;font-size:clamp(42px,7vw,76px);line-height:1.15;margin-top:12px}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{font-weight:300;font-size:18px;opacity:.85;line-height:1.9;margin-top:18px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pills span{border:1px solid rgba(243,236,225,.25);padding:8px 16px;border-radius:30px;font-size:14px}
+/* sections */
+.work{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:90px 0;border-bottom:1px solid #e2d8c9}
+.work:last-of-type{border-bottom:0}
+.work.flip .media{order:2}
+.num{font-size:14px;font-weight:600;color:var(--gold);letter-spacing:2px}
+h2{font-family:Kufi;font-size:clamp(30px,4vw,44px);margin-top:8px;color:var(--green)}
+.work p{color:var(--mut);line-height:1.9;margin-top:12px;font-size:16.5px}
+.feat{list-style:none;margin-top:18px;display:grid;gap:10px}
+.feat li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px}
+.feat li::before{content:"✓";flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:18px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.dark{background:var(--ink);color:var(--cream)}
+.btn.line{border:1px solid var(--ink)}
+.btn.gold{background:var(--gold);color:var(--ink)}
+/* phone */
+.media{display:flex;justify-content:center;position:relative}
+.phone{width:320px;height:650px;border-radius:52px;background:#111;padding:12px;box-shadow:0 50px 100px rgba(11,35,26,.28),inset 0 0 0 2px #333;position:relative}
+.phone::before{content:"";position:absolute;top:22px;left:50%;transform:translateX(-50%);width:96px;height:26px;border-radius:20px;background:#000;z-index:3}
+.phone iframe,.phone video{width:100%;height:100%;border:0;border-radius:40px;display:block;background:#fff;object-fit:cover}
+.qr{position:absolute;bottom:40px;right:-10px;background:#fff;padding:14px;border-radius:22px;box-shadow:0 20px 40px rgba(11,35,26,.18);text-align:center;width:150px;transform:rotate(4deg)}
+.qr img{width:100%;display:block}
+.qr small{display:block;font-size:12px;color:var(--mut);margin-top:6px}
+.laptop{width:100%;max-width:470px}
+.laptop .scr{aspect-ratio:16/10;background:#111;border-radius:18px 18px 4px 4px;padding:10px;box-shadow:0 40px 80px rgba(11,35,26,.25)}
+.laptop .scr .in{width:100%;height:100%;border-radius:8px;overflow:hidden;background:var(--ink);display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;transform-style:preserve-3d}
+.laptop .scr .in img{width:100%;height:100%;object-fit:cover;border-radius:5px}
+.laptop .base{height:14px;background:linear-gradient(#d9d2c6,#bdb5a8);border-radius:0 0 18px 18px;margin:0 -24px}
+/* services */
+.svc{background:var(--paper);border-radius:40px;padding:56px 40px;margin:30px 0 40px}
+.svc h2{text-align:center}
+.svc .sub{text-align:center;color:var(--mut);margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.card{background:#fff;border-radius:26px;padding:26px;border:1px solid #ece3d6}
+.card b{font-size:19px;display:block;color:var(--green)}
+.card p{color:var(--mut);font-size:14.5px;line-height:1.8;margin-top:8px}
+.card .ic{font-size:30px;margin-bottom:10px}
+.end{text-align:center;padding:30px 0 80px}
+.end h2{font-size:clamp(30px,4.5vw,48px)}
+.end p{color:var(--mut);margin-top:8px}
+.end .btns{justify-content:center}
+foot{display:block}
+footer{text-align:center;font-size:13px;color:var(--mut);padding:0 0 40px}
+.rv{opacity:0;transform:translateY(30px);transition:1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (max-width:820px){
+ .work{grid-template-columns:1fr;gap:40px;padding:64px 0}
+ .work.flip .media{order:0}
+ .grid{grid-template-columns:1fr}
+ .svc{padding:40px 22px}
+ .phone{width:280px;height:570px}
+ .qr{right:0;width:120px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="bar"><a class="brand" href="../"><img src="../img/logo.png" alt=""><span>أبله موونا</span></a><a class="back" href="../">الموقع الرئيسي</a></div>
+    <div class="hc">
+      <div class="kick">أعمالي</div>
+      <h1>تصاميم <em>تحكي</em> عن مشروعك</h1>
+      <p class="lead">منيوهات إلكترونية للكافيهات، ريلز ترويجية بدون تصوير، ومواقع تفاعلية بحركات فخمة. هذه نماذج حيّة، جرّبيها بنفسك.</p>
+      <div class="pills"><span>منيو إلكتروني</span><span>ريلز وإعلانات</span><span>مواقع تفاعلية</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="work rv">
+    <div class="media">
+      <div class="phone"><iframe src="../cafe/" title="منيو بُنّ ورمل" loading="lazy"></iframe></div>
+      <div class="qr"><img src="qr-cafe.svg" alt="باركود المنيو"><small>صوّري الباركود وجرّبيه من جوالك</small></div>
+    </div>
+    <div>
+      <div class="num">٠١ · منيو إلكتروني</div>
+      <h2>منيو كافيه «بُنّ ورمل»</h2>
+      <p>نموذج منيو لكافيه، يفتح من الجوال بباركود على الطاولة. جرّبيه داخل الجوال هنا: اختاري مزاجك، وافتحي أي صنف، وأرسلي طلبك.</p>
+      <ul class="feat"><li>اقتراحات حسب مزاج الزبون</li><li>اختيار الحجم ونوع الحليب، والسعر يتحدث مباشرة</li><li>الطلب يوصل مرتب على واتساب الكافيه</li><li>السعرات الحرارية والأسعار بالدينار الكويتي</li></ul>
+      <div class="btns"><a class="btn dark" href="../cafe/" target="_blank">افتحي المنيو كامل</a></div>
+    </div>
+  </section>
+
+  <section class="work flip rv">
+    <div class="media"><div class="phone"><video src="../reels/package-1/reel.mp4" controls playsinline preload="metadata" poster="../reels/package-1/poster.jpg"></video></div></div>
+    <div>
+      <div class="num">٠٢ · ريلز ترويجية</div>
+      <h2>ريل الباقة المتكاملة</h2>
+      <p>ريل موشن جرافيك هادئ وفخم، بدون وجه ولا صوت بشري. يعرض خدماتك خطوة بخطوة بصور شغلك الحقيقية، جاهز لإنستقرام وتيك توك.</p>
+      <ul class="feat"><li>مقاس الريلز ١٠٨٠×١٩٢٠</li><li>ألوان وخطوط هويتك</li><li>مؤثرات صوتية ناعمة بدون موسيقى</li></ul>
+    </div>
+  </section>
+
+  <section class="work rv">
+    <div class="media"><div class="laptop"><div class="scr"><div class="in">
+      <img src="../img/pv/shakhsiya-1-1.jpg" alt=""><img src="../img/pv/battaniya-1-2.jpg" alt=""><img src="../img/pv/maskan-1-1.jpg" alt=""><img src="../img/pv/alyaf-1-1.jpg" alt=""><img src="../img/game-jar.jpg" alt=""><img src="../img/pv/certs-2.jpg" alt="">
+    </div></div><div class="base"></div></div></div>
+    <div>
+      <div class="num">٠٣ · مواقع تفاعلية</div>
+      <h2>موقع أبله موونا</h2>
+      <p>موقع كامل يعرض مئات الدروس بمعايناتها، مع مقدمة سينمائية تتحرك مع السكرول. نفس المستوى أقدر أسويه لمشروعك.</p>
+      <ul class="feat"><li>حركات سكرول فخمة</li><li>يناسب الجوال والآيباد والكمبيوتر</li><li>استضافة مجانية</li></ul>
+      <div class="btns"><a class="btn dark" href="../intro/" target="_blank">شوفي المقدمة التفاعلية</a><a class="btn line" href="../" target="_blank">الموقع الكامل</a></div>
+    </div>
+  </section>
+
+  <section class="svc rv">
+    <h2>شنو أقدر أسوي لك؟</h2>
+    <div class="sub">كل تصميم يتسوى من الصفر بهوية مشروعك</div>
+    <div class="grid">
+      <div class="card"><div class="ic">☕</div><b>منيو إلكتروني</b><p>للكافيهات والمطاعم ومحلات الحلويات، مع باركود جاهز للطاولات واستقبال الطلبات على الواتساب.</p></div>
+      <div class="card"><div class="ic">🎬</div><b>ريلز وإعلانات</b><p>فيديوهات ترويجية بموشن جرافيك لمنتجاتك أو خدماتك، بدون ما تحتاجين تصوّرين نفسك.</p></div>
+      <div class="card"><div class="ic">✨</div><b>موقع لمشروعك</b><p>صفحة أو موقع كامل بحركات احترافية يعرض خدماتك، ويوصّل زبائنك لك مباشرة.</p></div>
+    </div>
+  </section>
+
+  <section class="end rv">
+    <h2>عندك مشروع؟</h2>
+    <p>كلميني على الواتساب وأرسل لك التفاصيل والسعر</p>
+    <div class="btns"><a class="btn gold" href="https://wa.me/96555438624?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A3%D8%B9%D9%85%D8%A7%D9%84%D9%83%20%D9%88%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%B3%D8%A3%D9%84%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85" target="_blank" rel="noopener">راسليني على الواتساب</a></div>
+  </section>
+</main>
+<footer>أبله موونا · abla.moona</footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
