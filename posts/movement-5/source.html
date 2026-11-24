@@ -1,0 +1,101 @@
+<!DOCTYPE html><html dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:P;font-weight:300;src:url(ibm-plex-sans-arabic-arabic-300-normal.woff2)}
+@font-face{font-family:P;font-weight:400;src:url(ibm-plex-sans-arabic-arabic-400-normal.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(ibm-plex-sans-arabic-arabic-600-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(ibm-plex-sans-arabic-arabic-700-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:P;background:#ddd}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F3ECE1;color:#1f2f27;margin-bottom:20px}
+.s::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;left:-420px;top:-420px;background:radial-gradient(closest-side,rgba(232,170,170,.35),transparent)}
+.s::after{content:"";position:absolute;width:800px;height:800px;border-radius:50%;right:-380px;bottom:-380px;background:radial-gradient(closest-side,rgba(168,189,168,.45),transparent)}
+.in{position:absolute;inset:70px 80px;z-index:2;display:flex;flex-direction:column}
+.brand{display:flex;align-items:center;gap:14px;font-size:28px;font-weight:600;color:#244735}
+.brand img{width:62px;height:62px;border-radius:50%}
+.pg{position:absolute;left:80px;top:84px;z-index:3;font-size:26px;color:#9a8f80;font-weight:600;direction:ltr}
+/* cover */
+.cov{background:#244735;color:#F3ECE1}
+.cov::before{background:radial-gradient(closest-side,rgba(127,184,168,.35),transparent)}
+.cov::after{background:radial-gradient(closest-side,rgba(198,161,91,.3),transparent)}
+.cov .brand{color:#F3ECE1}
+.kick{display:inline-block;background:#C6A15B;color:#1a2e23;font-weight:700;font-size:32px;padding:12px 30px;border-radius:40px;align-self:flex-start}
+.big{font-weight:700;font-size:118px;line-height:1.2;margin-top:40px}
+.big em{font-style:normal;color:#C6A15B}
+.subt{font-weight:300;font-size:40px;opacity:.85;margin-top:26px;line-height:1.6}
+.chips{display:flex;gap:16px;margin-top:auto}
+.chips span{border:2px solid rgba(243,236,225,.35);padding:14px 26px;border-radius:40px;font-size:30px}
+.save{position:absolute;left:0;bottom:0;font-size:30px;color:#C6A15B;font-weight:600}
+/* activity */
+.num{font-size:200px;font-weight:700;color:#C6A15B;line-height:1;margin-top:46px}
+.t{font-size:84px;font-weight:700;color:#244735;line-height:1.2;margin-top:6px}
+.d{font-size:36px;font-weight:400;color:#5b6a62;margin-top:14px;line-height:1.6}
+.steps{list-style:none;margin-top:44px;display:grid;gap:22px;counter-reset:k}
+.steps li{counter-increment:k;display:flex;gap:22px;align-items:flex-start;font-size:38px;line-height:1.5;font-weight:400}
+.steps li::before{content:counter(k,arabic-indic);flex:0 0 64px;height:64px;border-radius:50%;background:#244735;color:#F3ECE1;font-weight:700;font-size:32px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.ex{margin-top:auto;background:#fff;border-radius:34px;padding:30px 36px;box-shadow:0 20px 50px rgba(36,71,53,.10);border-right:10px solid #E8AAAA;font-size:34px;line-height:1.6}
+.ex b{color:#b0646a;font-weight:700}
+.time{position:absolute;left:0;top:250px;background:#fff;border-radius:40px;padding:14px 26px;font-size:30px;font-weight:600;color:#244735;box-shadow:0 10px 30px rgba(36,71,53,.1)}
+/* end */
+.end{background:#F3ECE1}
+.q{font-size:96px;font-weight:700;color:#244735;line-height:1.3;margin-top:120px;text-align:center}
+.q em{font-style:normal;color:#C6A15B}
+.p{font-size:40px;color:#5b6a62;text-align:center;margin-top:30px;line-height:1.7}
+.biglogo{width:230px;height:230px;border-radius:50%;margin:70px auto 0;box-shadow:0 30px 60px rgba(36,71,53,.25)}
+.h{text-align:center;font-size:44px;font-weight:700;color:#244735;margin-top:26px;direction:ltr}
+</style></head><body>
+
+<div class="s cov"><div class="in">
+ <div class="brand"><img src="logo.png">أبله موونا</div>
+ <div style="margin-top:110px"><span class="kick">فايدة للمعلمات</span></div>
+ <div class="big">٥ أنشطة حركية<br>تصحّي الصف<br>في <em>دقيقتين</em></div>
+ <div class="subt">بدون أدوات ولا تحضير، وتصلح لأي مادة</div>
+ <div class="chips"><span>⏱ دقيقتين</span><span>👭 جماعي</span><span>✋ بدون أدوات</span></div>
+</div><div class="pg">1/7</div></div>
+
+<div class="s"><div class="in">
+ <div class="brand"><img src="logo.png">أبله موونا</div>
+ <div class="num">١</div><div class="t">التمثال المفهومي</div>
+ <div class="d">الطالبات يجسّدن المفهوم بأجسامهن</div>
+ <ul class="steps"><li>صفّقي، والطالبات يمشين بهدوء بين الطاولات</li><li>وقّفي التصفيق وقولي مفهومًا من الدرس</li><li>كل طالبة تتجمد بوضعية تعبّر عنه، واختاري أجمل تمثال يشرح فكرته</li></ul>
+ <div class="ex"><b>مثال:</b> قولي «الادخار»، فوحدة تحط شي بحصالة وهمية، والثانية تقفل خزنة!</div>
+</div><div class="pg">2/7</div></div>
+
+<div class="s"><div class="in">
+ <div class="brand"><img src="logo.png">أبله موونا</div>
+ <div class="num">٢</div><div class="t">خط الرأي</div>
+ <div class="d">نقاش يتحرك فيه الصف كله</div>
+ <ul class="steps"><li>تخيّلي خطًا بالصف: طرف «أوافق» وطرف «ما أوافق»</li><li>اقرئي عبارة من الدرس، وكل طالبة توقف بالمكان اللي يمثّل رأيها</li><li>اسألي طالبة من كل طرف: ليش وقفتي هني؟</li></ul>
+ <div class="ex"><b>مثال:</b> «الشراء أونلاين دايمًا أوفر من السوق»، وشوفي الصف ينقسم ويبدأ النقاش.</div>
+</div><div class="pg">3/7</div></div>
+
+<div class="s"><div class="in">
+ <div class="brand"><img src="logo.png">أبله موونا</div>
+ <div class="num">٣</div><div class="t">الطابور الصامت</div>
+ <div class="d">ترتيب الخطوات بدون ولا كلمة</div>
+ <ul class="steps"><li>اكتبي خطوات عملية أو أحداثًا على أوراق صغيرة</li><li>وزّعيها على ٥ طالبات بشكل عشوائي</li><li>يرتّبن أنفسهن بطابور بالترتيب الصحيح خلال ٣٠ ثانية، والكلام ممنوع!</li></ul>
+ <div class="ex"><b>مثال:</b> خطوات غسل الصحون أو مراحل تحضير وجبة، والصف يحكم: صح ولا لا؟</div>
+</div><div class="pg">4/7</div></div>
+
+<div class="s"><div class="in">
+ <div class="brand"><img src="logo.png">أبله موونا</div>
+ <div class="num">٤</div><div class="t">تبديل الكراسي</div>
+ <div class="d">مراجعة سريعة تحمّس الكل</div>
+ <ul class="steps"><li>أعطي كل طالبة كلمة من الدرس تقولها بصوت عالي</li><li>اقرئي تعريفًا أو وصفًا بدون ما تذكرين الكلمة</li><li>صاحبة الكلمة تقوم وتبدّل مكانها مع أي زميلة بأسرع وقت</li></ul>
+ <div class="ex"><b>مثال:</b> «شي نحطه على الجرح عشان نوقف النزيف»، فتقوم صاحبة كلمة «الضمادة».</div>
+</div><div class="pg">5/7</div></div>
+
+<div class="s"><div class="in">
+ <div class="brand"><img src="logo.png">أبله موونا</div>
+ <div class="num">٥</div><div class="t">زوايا الصف الأربع</div>
+ <div class="d">سؤال اختيار من متعدد بالمشي</div>
+ <ul class="steps"><li>سمّي كل زاوية بالصف بحرف: أ، ب، ج، د</li><li>اعرضي سؤالًا وأربع خيارات على الشاشة</li><li>كل طالبة تمشي للزاوية اللي فيها إجابتها، وبعدها اكشفي الإجابة</li></ul>
+ <div class="ex"><b>مثال:</b> «أي ألياف مصدرها نباتي؟» القطن، الصوف، الحرير، النايلون.</div>
+</div><div class="pg">6/7</div></div>
+
+<div class="s end"><div class="in">
+ <div class="brand"><img src="logo.png">أبله موونا</div>
+ <div class="q">أي نشاط<br>بتجربينه <em>أول؟</em></div>
+ <div class="p">قولي لي بالتعليقات 👇<br>واحفظي البوست يفيدج بأول حصة 🔖</div>
+ <img class="biglogo" src="logo.png">
+ <div class="h">@abla.moona</div>
+</div><div class="pg">7/7</div></div>
+</body></html>
